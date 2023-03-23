@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Inter-Regular";
+  src: url("/src/assets/fonts/Inter-Regular.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+  font-family: "Inter-Regular";
+  font-style: normal;
+  font-weight: 600;
+  background-color: #12141d;
+}
+
+/* Napis główny */
+h1 {
+  font-weight: 700;
+  font-size: 54px;
+  color: #fff;
+}
+
+/* Sekcje */
+h2 {
+  font-weight: 700;
+  font-size: 48px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Something about me */
+h3 {
+  font-weight: 600;
+  font-size: 40px;
+  color: #fff;
+}
+
+/* Fioletowy tekst mały */
+h4 {
+  font-weight: 600;
+  font-size: 20px;
+  color: #5132c0;
+  text-align: center;
+}
+
+h5 {
+}
+
+a{
+  text-decoration: none;
+}
