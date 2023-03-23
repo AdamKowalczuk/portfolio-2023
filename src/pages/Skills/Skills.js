@@ -15,7 +15,7 @@ import FigmaIcon from "../../assets/skills-icons/figma-icon.svg";
 import AdobeXDIcon from "../../assets/skills-icons/adobexd-icon.svg";
 import GatsbyIcon from "../../assets/skills-icons/gatsby-icon.svg";
 import PwaIcon from "../../assets/skills-icons/pwa-icon.svg";
-import { motion, Transition, SVGMotionProps, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 const SkillsWrapper = styled.div`
   padding: 50px;

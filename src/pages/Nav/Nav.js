@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import Logo from "../../assets/AK.svg";
 import theme from "../../styles/theme";
-import { motion, Transition, SVGMotionProps, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 const StyledNav = styled.nav`
   background-color: ${theme.colors.darkGray};

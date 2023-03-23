@@ -7,7 +7,7 @@ import Project2Image from "../../assets/projects-images/project2.png";
 import Project3Image from "../../assets/projects-images/project3.png";
 import Project4Image from "../../assets/projects-images/project4.png";
 import { ReactComponent as Check } from "../../assets/check.svg";
-import { motion, Transition, SVGMotionProps, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 const ProjectsWrapper = styled.div`
   display: flex;

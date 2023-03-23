@@ -4,7 +4,7 @@ import { ReactComponent as LinkedinIcon } from "../../assets/social-icons/linked
 import { ReactComponent as GithubIcon } from "../../assets/social-icons/github-icon.svg";
 import { ReactComponent as CVIcon } from "../../assets/social-icons/cv-icon.svg";
 import theme from "../../styles/theme";
-import { motion, Transition, SVGMotionProps, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 const StyledFooter = styled.footer`
   display: flex;
