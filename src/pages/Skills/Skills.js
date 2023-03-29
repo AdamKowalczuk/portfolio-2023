@@ -22,6 +22,9 @@ const SkillsWrapper = styled.div`
   h3 {
     margin-bottom: 10px;
   }
+  @media only screen and (max-width: 600px) {
+    padding: 10px;
+  }
 `;
 
 const SkillsIconsWrapper = styled.div`
@@ -29,6 +32,11 @@ const SkillsIconsWrapper = styled.div`
   gap: 50px;
   padding: 20px;
   flex-wrap: wrap;
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+  }
 `;
 
 const Skill = styled.div`
@@ -39,6 +47,15 @@ const Skill = styled.div`
     color: ${theme.colors.white};
     font-size: 20px;
     font-weight: 700;
+  }
+  @media only screen and (max-width: 600px) {
+    p {
+      font-size: 10px;
+    }
+    img {
+      width: 30px;
+      height: 30px;
+    }
   }
 `;
 

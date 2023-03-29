@@ -13,6 +13,10 @@ const StyledFooter = styled.footer`
   height: 70px;
   background-color: ${theme.colors.darkGray};
   padding: 0 20px;
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    height: auto;
+  }
 `;
 
 const EmptyDiv = styled.div`
@@ -25,10 +29,17 @@ const SocialIcons = styled.div`
   width: 34%;
   justify-content: center;
   cursor: pointer;
+  align-items: center;
   svg:hover {
     path {
       fill: ${theme.colors.purple};
       fill-opacity: 1;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    padding-top: 10px;
+    svg {
+      width: 12px;
     }
   }
 `;
@@ -37,6 +48,11 @@ const Copyright = styled.p`
   width: 33%;
   text-align: right;
   color: ${theme.colors.gray};
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+  }
 `;
 
 export default class Footer extends Component {

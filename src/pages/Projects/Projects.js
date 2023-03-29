@@ -15,6 +15,11 @@ const ProjectsWrapper = styled.div`
   gap: 50px;
   margin-top: 50px;
   margin-bottom: 50px;
+  @media only screen and (max-width: 600px) {
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 `;
 
 const Project = styled.div`
@@ -23,6 +28,11 @@ const Project = styled.div`
   width: 90%;
   gap: 50px;
   justify-content: center;
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    width: 100%;
+    gap: 0px;
+  }
 `;
 
 const ProjectImage = styled.div`
@@ -35,6 +45,10 @@ const ProjectImage = styled.div`
   // max-width: 500px;
   min-height: 500px;
   width: 500px;
+  @media only screen and (max-width: 600px) {
+    min-height: 300px;
+    width: auto;
+  }
 `;
 
 const ProjectSummary = styled.div`
@@ -45,8 +59,13 @@ const ProjectSummary = styled.div`
   padding: 10px 40px;
   max-width: 500px;
   min-height: 500px;
-
   width: 500px;
+  @media only screen and (max-width: 600px) {
+    min-height: 300px;
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+  }
 `;
 
 const ProjectTitle = styled.h4`
@@ -56,6 +75,9 @@ const ProjectTitle = styled.h4`
 const ProjectDescription = styled.p`
   font-size: 24px;
   color: ${theme.colors.white};
+  @media only screen and (max-width: 600px) {
+    font-size: 12px;
+  }
 `;
 
 const ProjectTechnologies = styled.div``;
@@ -72,6 +94,11 @@ const ProjectTech = styled.div`
   gap: 20px;
   color: ${theme.colors.white};
   width: 50%;
+  @media only screen and (max-width: 600px) {
+    p {
+      font-size: 12px;
+    }
+  }
 `;
 
 const Checkbox = styled.div`
@@ -82,6 +109,13 @@ const Checkbox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 600px) {
+    width: 18px;
+    height: 18px;
+    svg {
+      width: 12px;
+    }
+  }
 `;
 
 const ProjectButton = styled(motion.div)`
@@ -107,6 +141,12 @@ const ProjectButton = styled(motion.div)`
   path {
     fill: ${theme.colors.white};
     fill-opacity: 1;
+  }
+  @media only screen and (max-width: 600px) {
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 12px;
   }
 `;
 
