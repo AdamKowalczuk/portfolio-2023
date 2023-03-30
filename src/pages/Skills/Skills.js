@@ -17,6 +17,12 @@ import GatsbyIcon from "../../assets/skills-icons/gatsby-icon.svg";
 import PwaIcon from "../../assets/skills-icons/pwa-icon.svg";
 import { motion } from "framer-motion";
 
+const SectionHeader = styled.div`
+  @media only screen and (max-width: 600px) {
+    margin-top: 100px;
+  }
+`;
+
 const SkillsWrapper = styled.div`
   padding: 50px;
   h3 {
@@ -142,8 +148,11 @@ export default class Skills extends Component {
   render() {
     return (
       <>
-        <h4 id="skills">Some technical stuff.</h4>
-        <h2>My Skills</h2>
+        <SectionHeader>
+          <h4 id="skills">Some technical stuff.</h4>
+          <h2>My Skills</h2>
+        </SectionHeader>
+
         <SkillsWrapper>
           {skills.map((skill) => {
             return (

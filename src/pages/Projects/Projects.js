@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { ReactComponent as GithubIcon } from "../../assets/social-icons/github-icon.svg";
 import theme from "../../styles/theme";
-import Project1Image from "../../assets/projects-images/project1.png";
-import Project2Image from "../../assets/projects-images/project2.png";
-import Project3Image from "../../assets/projects-images/project3.png";
-import Project4Image from "../../assets/projects-images/project4.png";
+import Project1Image from "../../assets/projects-images/project5.png";
+import Project2Image from "../../assets/projects-images/project6.png";
+import Project3Image from "../../assets/projects-images/project7.png";
+import Project4Image from "../../assets/projects-images/project8.png";
 import { ReactComponent as Check } from "../../assets/check.svg";
 import { motion } from "framer-motion";
 
@@ -29,7 +29,7 @@ const Project = styled.div`
   gap: 50px;
   justify-content: center;
   @media only screen and (max-width: 600px) {
-    flex-direction: column;
+    flex-direction: ${(props) => (props.reverse ? "column-reverse" : "column")};
     width: 100%;
     gap: 0px;
   }
@@ -37,17 +37,12 @@ const Project = styled.div`
 
 const ProjectImage = styled.div`
   width: 100%;
-  // height: 400px;
   background-size: contain;
   background-image: url(${(props) => (props.image ? props.image : "#1D1F28")});
-  padding: 10px;
   background-repeat: no-repeat;
-  // max-width: 500px;
-  min-height: 500px;
-  width: 500px;
   @media only screen and (max-width: 600px) {
-    min-height: 300px;
-    width: auto;
+    width: 100%;
+    height: 100vw;
   }
 `;
 
@@ -57,14 +52,10 @@ const ProjectSummary = styled.div`
   padding: 10px;
   border-radius: 10px;
   padding: 10px 40px;
-  max-width: 500px;
-  min-height: 500px;
-  width: 500px;
   @media only screen and (max-width: 600px) {
-    min-height: 300px;
-    width: 80%;
-    margin: auto;
-    padding: 10px;
+    width: auto;
+    // min-height: 100vw;
+    padding: 10px 40px 20px 40px;
   }
 `;
 
@@ -217,7 +208,7 @@ export default class Projects extends Component {
               </a>
             </ProjectSummary>
           </Project>
-          <Project>
+          <Project reverse={true}>
             <ProjectSummary>
               <ProjectTitle>Plan Harmony</ProjectTitle>
               <ProjectDescription>
@@ -300,7 +291,7 @@ export default class Projects extends Component {
               </a>
             </ProjectSummary>
           </Project>
-          <Project>
+          <Project reverse={true}>
             <ProjectSummary>
               <ProjectTitle>Nerd Shop</ProjectTitle>
               <ProjectDescription>

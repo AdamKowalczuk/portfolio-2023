@@ -39,7 +39,7 @@ const SocialIcons = styled.div`
   @media only screen and (max-width: 600px) {
     padding-top: 10px;
     svg {
-      width: 12px;
+      // width: 12px;
     }
   }
 `;
@@ -51,7 +51,7 @@ const Copyright = styled.p`
   @media only screen and (max-width: 600px) {
     width: 100%;
     text-align: center;
-    font-size: 12px;
+    // font-size: 12px;
   }
 `;
 

@@ -6,7 +6,11 @@ import Skills from "./pages/Skills/Skills";
 import Projects from "./pages/Projects/Projects";
 import React, { Component } from "react";
 import "./app.css";
+import styled from "styled-components";
 
+const StyledWrapper = styled.div`
+  padding: 20px;
+`;
 class App extends Component {
   render() {
     return (
@@ -15,9 +19,12 @@ class App extends Component {
         <Nav />
         {/* <Routes> */}
         {/* <Route exact path="/" element={<About />}></Route> */}
-        <About />
-        <Skills />
-        <Projects />
+        <StyledWrapper>
+          <About />
+          <Skills />
+          <Projects />
+        </StyledWrapper>
+
         {/* <Route path="/" element={<Skills />}></Route>
             <Route path="/" element={<Projects />}></Route> */}
         {/* </Routes> */}
