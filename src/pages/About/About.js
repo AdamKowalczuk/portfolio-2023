@@ -6,14 +6,13 @@ import Avatar from "../../assets/avatar.png";
 const AboutWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  width: 90%;
+  width: 100%;
   margin: auto;
   margin-top: 50px;
   @media only screen and (max-width: 600px) {
     flex-direction: column;
     margin-top: 0px;
     text-align: center;
-    width: 100%;
   }
 `;
 
@@ -31,7 +30,7 @@ const AboutWelcome = styled.div`
 const AboutDescription = styled.div`
   background: linear-gradient(180deg, rgba(81, 50, 192, 0.5) 0%, #5132c0 100%);
   border-radius: 12px;
-  width: 90%;
+  width: auto;
   margin: auto;
   padding: 20px;
   margin-top: 50px;

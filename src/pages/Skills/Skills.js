@@ -24,7 +24,7 @@ const SectionHeader = styled.div`
 `;
 
 const SkillsWrapper = styled.div`
-  padding: 50px;
+  // padding: 50px;
   h3 {
     margin-bottom: 10px;
   }
@@ -56,11 +56,11 @@ const Skill = styled.div`
   }
   @media only screen and (max-width: 600px) {
     p {
-      font-size: 10px;
+      font-size: 12px;
     }
     img {
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
     }
   }
 `;

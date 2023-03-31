@@ -2,7 +2,10 @@
   font-family: "Inter-Regular";
   src: url("/src/assets/fonts/Inter-Regular.ttf") format("truetype");
 }
-
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: "Inter-Regular";

@@ -12,6 +12,12 @@ const StyledNav = styled.nav`
   height: 70px;
   padding-right: 5px;
   padding-left: 10px;
+  position: fixed;
+  top: 0;
+  width: calc(100% - 15px);
+  svg {
+    padding: 10px;
+  }
 `;
 
 const NavLogo = styled.div``;
@@ -96,25 +102,43 @@ export default function Nav() {
         <img src={Logo} alt="logo"></img>
       </NavLogo>
 
-      <Ul>
-        <Li>
-          <a href="#about">About</a>
-        </Li>
-        <Li>
-          <a href="#skills">Skills</a>
-        </Li>
-        <Li>
-          <a href="#projects">Projects</a>
-        </Li>
-      </Ul>
-      <MenuButton
-        isOpen={isOpen}
-        onClick={() => setOpen(!isOpen)}
-        strokeWidth="6"
-        color="#ff6666"
-        lineProps={{ strokeLinecap: "round" }}
-        transition={{ type: "spring", stiffness: 260, damping: 20 }}
-      />
+      {window.innerWidth < 600 ? (
+        <>
+          {isOpen ? (
+            <Ul>
+              <Li>
+                <a href="#projects">Projects</a>
+              </Li>
+              <Li>
+                <a href="#skills">Skills</a>
+              </Li>
+              <Li>
+                <a href="#about">About</a>
+              </Li>
+            </Ul>
+          ) : null}
+          <MenuButton
+            isOpen={isOpen}
+            onClick={() => setOpen(!isOpen)}
+            strokeWidth="6"
+            color="#5132c0"
+            lineProps={{ strokeLinecap: "round" }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+          />
+        </>
+      ) : (
+        <Ul>
+          <Li>
+            <a href="#projects">Projects</a>
+          </Li>
+          <Li>
+            <a href="#skills">Skills</a>
+          </Li>
+          <Li>
+            <a href="#about">About</a>
+          </Li>
+        </Ul>
+      )}
     </StyledNav>
   );
 }

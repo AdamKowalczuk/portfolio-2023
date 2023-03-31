@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { ReactComponent as GithubIcon } from "../../assets/social-icons/github-icon.svg";
 import theme from "../../styles/theme";
-import Project1Image from "../../assets/projects-images/project5.png";
-import Project2Image from "../../assets/projects-images/project6.png";
-import Project3Image from "../../assets/projects-images/project7.png";
-import Project4Image from "../../assets/projects-images/project8.png";
+import Project1Image from "../../assets/projects-images/project9.png";
+import Project2Image from "../../assets/projects-images/project10.png";
+import Project3Image from "../../assets/projects-images/project11.png";
+import Project4Image from "../../assets/projects-images/project12.png";
 import { ReactComponent as Check } from "../../assets/check.svg";
 import { motion } from "framer-motion";
 
@@ -25,7 +25,7 @@ const ProjectsWrapper = styled.div`
 const Project = styled.div`
   display: flex;
   margin: auto;
-  width: 90%;
+  width: 100%;
   gap: 50px;
   justify-content: center;
   @media only screen and (max-width: 600px) {
@@ -37,6 +37,8 @@ const Project = styled.div`
 
 const ProjectImage = styled.div`
   width: 100%;
+  max-width: 530px;
+  height: 550px;
   background-size: contain;
   background-image: url(${(props) => (props.image ? props.image : "#1D1F28")});
   background-repeat: no-repeat;
@@ -48,14 +50,17 @@ const ProjectImage = styled.div`
 
 const ProjectSummary = styled.div`
   width: 100%;
+  width: 450px;
+  height: 550px;
   background-color: ${theme.colors.darkGray};
   padding: 10px;
   border-radius: 10px;
-  padding: 10px 40px;
+  padding: 0px 40px;
   @media only screen and (max-width: 600px) {
     width: auto;
     // min-height: 100vw;
     padding: 10px 40px 20px 40px;
+    height: auto;
   }
 `;
 

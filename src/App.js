@@ -9,7 +9,11 @@ import "./app.css";
 import styled from "styled-components";
 
 const StyledWrapper = styled.div`
-  padding: 20px;
+  padding: 50px;
+  margin-top: 70px;
+  @media only screen and (max-width: 600px) {
+    padding: 20px;
+  }
 `;
 class App extends Component {
   render() {
