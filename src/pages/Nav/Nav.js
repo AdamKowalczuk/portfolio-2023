@@ -15,6 +15,7 @@ const StyledNav = styled.nav`
   position: fixed;
   top: 0;
   width: calc(100% - 15px);
+  z-index: 2;
   svg {
     padding: 10px;
   }
@@ -106,13 +107,13 @@ export default function Nav() {
         <>
           {isOpen ? (
             <Ul>
-              <Li>
+              <Li key="1">
                 <a href="#projects">Projects</a>
               </Li>
-              <Li>
+              <Li key="2">
                 <a href="#skills">Skills</a>
               </Li>
-              <Li>
+              <Li key="3">
                 <a href="#about">About</a>
               </Li>
             </Ul>

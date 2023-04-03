@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useRef } from "react";
 import styled from "styled-components";
 import theme from "../../styles/theme";
 import HtmlIcon from "../../assets/skills-icons/html-icon.svg";
@@ -15,9 +15,10 @@ import FigmaIcon from "../../assets/skills-icons/figma-icon.svg";
 import AdobeXDIcon from "../../assets/skills-icons/adobexd-icon.svg";
 import GatsbyIcon from "../../assets/skills-icons/gatsby-icon.svg";
 import PwaIcon from "../../assets/skills-icons/pwa-icon.svg";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 const SectionHeader = styled.div`
+  margin-top: 200px;
   @media only screen and (max-width: 600px) {
     margin-top: 100px;
   }
@@ -32,8 +33,9 @@ const SkillsWrapper = styled.div`
     padding: 10px;
   }
 `;
+const SkillsSection = styled.div``;
 
-const SkillsIconsWrapper = styled.div`
+const SkillsIconsWrapper = styled(motion.div)`
   display: flex;
   gap: 50px;
   padding: 20px;
@@ -45,7 +47,7 @@ const SkillsIconsWrapper = styled.div`
   }
 `;
 
-const Skill = styled.div`
+const Skill = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,19 +146,34 @@ let skills = [
   },
 ];
 
-export default class Skills extends Component {
-  render() {
-    return (
-      <>
-        <SectionHeader>
-          <h4 id="skills">Some technical stuff.</h4>
-          <h2>My Skills</h2>
-        </SectionHeader>
+export default function Skills() {
+  const ref1 = useRef(null);
+  const isInView = useInView(ref1, { once: true });
+  return (
+    <>
+      <SectionHeader
+        ref={ref1}
+        style={{
+          transform: isInView ? "none" : "translateX(-200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        }}
+      >
+        <h4 id="skills">Some technical stuff.</h4>
+        <h2>My Skills</h2>
+      </SectionHeader>
 
-        <SkillsWrapper>
-          {skills.map((skill) => {
-            return (
-              <>
+      <SkillsWrapper>
+        {skills.map((skill, index) => {
+          return (
+            <>
+              <SkillsSection
+                style={{
+                  transform: isInView ? "none" : "translateX(-200px)",
+                  opacity: isInView ? 1 : 0,
+                  transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+                }}
+              >
                 <h3>{skill.section}</h3>
                 <SkillsIconsWrapper>
                   {skill.items.map((item) => {
@@ -175,11 +192,11 @@ export default class Skills extends Component {
                     );
                   })}
                 </SkillsIconsWrapper>
-              </>
-            );
-          })}
-        </SkillsWrapper>
-      </>
-    );
-  }
+              </SkillsSection>
+            </>
+          );
+        })}
+      </SkillsWrapper>
+    </>
+  );
 }

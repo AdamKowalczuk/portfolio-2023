@@ -12,6 +12,7 @@ body {
   font-style: normal;
   font-weight: 600;
   background-color: #12141d;
+  overflow: hidden;
 }
 
 /* Napis główny */
@@ -20,6 +21,7 @@ h1 {
   /* font-size: 54px; */
   font-size: 62px;
   color: #fff;
+  margin-top: 0;
 }
 
 /* Sekcje */

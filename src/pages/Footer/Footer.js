@@ -28,7 +28,9 @@ const SocialIcons = styled.div`
   gap: 15px;
   width: 34%;
   justify-content: center;
-  cursor: pointer;
+  svg {
+    cursor: pointer;
+  }
   align-items: center;
   svg:hover {
     path {
@@ -62,16 +64,22 @@ export default class Footer extends Component {
         <EmptyDiv></EmptyDiv>
         <SocialIcons>
           <motion.div whileHover={{ scale: 1.2 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
-            <LinkedinIcon />
+            <a href="https://www.linkedin.com/in/adamkowalczuk/" target="_blank" rel="noreferrer">
+              <LinkedinIcon />
+            </a>
           </motion.div>
           <motion.div whileHover={{ scale: 1.2 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
-            <GithubIcon />
+            <a href="https://github.com/AdamKowalczuk/" target="_blank" rel="noreferrer">
+              <GithubIcon />
+            </a>
           </motion.div>
           <motion.div whileHover={{ scale: 1.2 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
-            <CVIcon />
+            <a href="/CV.pdf" target="_blank" rel="noreferrer">
+              <CVIcon />
+            </a>
           </motion.div>
         </SocialIcons>
-        <Copyright>© Copyright Adam Kowalczuk</Copyright>
+        <Copyright>&copy; Copyright Adam Kowalczuk</Copyright>
       </StyledFooter>
     );
   }

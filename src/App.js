@@ -19,21 +19,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <Router> */}
         <Nav />
-        {/* <Routes> */}
-        {/* <Route exact path="/" element={<About />}></Route> */}
-        <StyledWrapper>
+        <StyledWrapper id="about">
           <About />
           <Skills />
           <Projects />
         </StyledWrapper>
-
-        {/* <Route path="/" element={<Skills />}></Route>
-            <Route path="/" element={<Projects />}></Route> */}
-        {/* </Routes> */}
         <Footer />
-        {/* </Router> */}
       </div>
     );
   }
