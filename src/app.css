@@ -13,6 +13,7 @@ body {
   font-weight: 600;
   background-color: #12141d;
   overflow-x: hidden;
+  width: 100vw;
 }
 
 /* Napis główny */
