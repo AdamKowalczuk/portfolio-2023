@@ -40,20 +40,18 @@ const SocialIcons = styled.div`
   }
   @media only screen and (max-width: 600px) {
     padding-top: 10px;
-    svg {
-      // width: 12px;
-    }
   }
 `;
 
 const Copyright = styled.p`
   width: 33%;
   text-align: right;
+  padding-right: 10px;
   color: ${theme.colors.gray};
   @media only screen and (max-width: 600px) {
     width: 100%;
     text-align: center;
-    // font-size: 12px;
+    padding-right: 0px;
   }
 `;
 
