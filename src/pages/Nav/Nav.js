@@ -14,7 +14,7 @@ const StyledNav = styled.nav`
   padding-left: 10px;
   position: fixed;
   top: 0;
-  width: calc(100% - 15px);
+  width: calc(100vw - 15px);
   z-index: 2;
   svg {
     padding: 10px;
