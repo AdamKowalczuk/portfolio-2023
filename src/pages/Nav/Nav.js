@@ -10,11 +10,11 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  padding-right: 5px;
+  padding-right: 15px;
   padding-left: 10px;
   position: fixed;
   top: 0;
-  width: calc(100vw - 15px);
+  width: calc(100vw - 25px);
   z-index: 2;
   svg {
     padding: 10px;
