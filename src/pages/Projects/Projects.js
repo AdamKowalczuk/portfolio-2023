@@ -46,7 +46,7 @@ const Project = styled.div`
   }
   @media only screen and (max-width: 600px) {
     .last-project {
-      height: calc(100vw - 40px);
+      height: calc(100vw - 60px);
     }
     .last-project-text {
       height: auto;
