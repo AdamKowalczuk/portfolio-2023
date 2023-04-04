@@ -24,7 +24,7 @@ const AboutBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1000px) {
     width: 100%;
   }
 `;
@@ -59,10 +59,12 @@ const AboutDescription = styled.div`
       font-weight: 700;
     }
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1000px) {
     width: auto;
-    margin: 30px 0;
     padding: 20px;
+  }
+  @media only screen and (max-width: 600px) {
+    margin: 30px 0;
   }
 `;
 
@@ -73,7 +75,7 @@ const AboutAvatar = styled.div`
     background-size: contain;
     height: 500px;
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1000px) {
     img {
       height: auto;
     }
@@ -123,10 +125,10 @@ export default function About() {
         <h3>Something about me</h3>
         <p>
           As a <b>frontend developer</b> specializing in React, I am committed to creating visually appealing and engaging user interfaces for web
-          applications. Along with my passion for coding, I am an avid <b>runner</b>, book lover, and board game enthusiast. My portfolio showcases my
-          skills in <b>React development</b>, including responsive design and <b>user-friendly interfaces</b>. When I'm not coding, you can find me
-          lacing up my running shoes for a morning jog, curling up with a good book,or challenging myself with a new board game. Let's work together
-          to bring your web application to <b>life!</b>
+          applications. Along with my passion for coding, I am an avid <b>runner</b>, <b>book lover</b>, and <b>board game</b> enthusiast. My
+          portfolio showcases my skills in <b>React development</b>, including responsive design and <b>user-friendly interfaces</b>. When I'm not
+          coding, you can find me lacing up my running shoes for a morning jog, curling up with a good book,or challenging myself with a new board
+          game. Let's work together to bring your web application to <b>life!</b>
         </p>
       </AboutDescription>
     </>

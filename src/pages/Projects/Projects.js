@@ -22,7 +22,7 @@ const ProjectsWrapper = styled.div`
   gap: 50px;
   margin-top: 50px;
   margin-bottom: 50px;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1200px) {
     gap: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -38,10 +38,13 @@ const Project = styled.div`
   .last-project {
     height: 490px;
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1200px) {
     flex-direction: ${(props) => (props.reverse ? "column-reverse" : "column")};
     width: 100%;
     gap: 20px;
+    align-items: center;
+  }
+  @media only screen and (max-width: 600px) {
     .last-project {
       height: calc(100vw - 40px);
     }
