@@ -2,10 +2,10 @@ import React, { Component, useRef } from "react";
 import styled from "styled-components";
 import { ReactComponent as GithubIcon } from "../../assets/social-icons/github-icon.svg";
 import theme from "../../styles/theme";
-import Project1Image from "../../assets/projects-images/project9.png";
-import Project2Image from "../../assets/projects-images/project10.png";
-import Project3Image from "../../assets/projects-images/project11.png";
-import Project4Image from "../../assets/projects-images/project12.png";
+import Project1Image from "../../assets/projects-images/project1.png";
+import Project2Image from "../../assets/projects-images/project2.png";
+import Project3Image from "../../assets/projects-images/project3.png";
+import Project4Image from "../../assets/projects-images/project4.png";
 import { ReactComponent as Check } from "../../assets/check.svg";
 import { motion, useInView } from "framer-motion";
 
@@ -62,7 +62,7 @@ const ProjectImage = styled.div`
   @media only screen and (max-width: 600px) {
     width: 100%;
     height: calc(100vw - 40px);
-    background-size: contain;
+    background-size: cover;
   }
 `;
 

@@ -54,6 +54,10 @@ const AboutDescription = styled.div`
   }
   p {
     color: ${theme.colors.gray};
+    b {
+      color: ${theme.colors.white};
+      font-weight: 700;
+    }
   }
   @media only screen and (max-width: 600px) {
     width: auto;
@@ -93,7 +97,7 @@ export default function About() {
               transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
             }}
           >
-            <h4>Welcome to my portfolio</h4>
+            <h4>Welcome to my portfolio!</h4>
             <h1>I’m Adam, a React Frontend Developer</h1>
           </AboutWelcome>
         </AboutBox>
@@ -105,7 +109,7 @@ export default function About() {
             transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
           }}
         >
-          <img src={Avatar} />
+          <img src={Avatar} alt="avatar" />
         </AboutAvatar>
       </AboutWrapper>
       <AboutDescription
@@ -118,8 +122,11 @@ export default function About() {
       >
         <h3>Something about me</h3>
         <p>
-          I am a selftaught front-end developer. I primarily focus on writing clean, elegant, and efficient code. Besides programming, I also love
-          adrenaline. I take part in various races, from Runmageddon to Marathons.
+          As a <b>frontend developer</b> specializing in React, I am committed to creating visually appealing and engaging user interfaces for web
+          applications. Along with my passion for coding, I am an avid <b>runner</b>, book lover, and board game enthusiast. My portfolio showcases my
+          skills in <b>React development</b>, including responsive design and <b>user-friendly interfaces</b>. When I'm not coding, you can find me
+          lacing up my running shoes for a morning jog, curling up with a good book,or challenging myself with a new board game. Let's work together
+          to bring your web application to <b>life!</b>
         </p>
       </AboutDescription>
     </>

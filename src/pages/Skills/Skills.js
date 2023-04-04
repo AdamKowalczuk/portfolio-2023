@@ -54,7 +54,7 @@ const Skill = styled(motion.div)`
   p {
     color: ${theme.colors.white};
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
   }
   @media only screen and (max-width: 600px) {
     p {

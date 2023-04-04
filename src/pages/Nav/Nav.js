@@ -21,7 +21,11 @@ const StyledNav = styled.nav`
   }
 `;
 
-const NavLogo = styled.div``;
+const NavLogo = styled.div`
+  img {
+    cursor: pointer;
+  }
+`;
 
 const Ul = styled.ul`
   list-style-type: none;
@@ -109,7 +113,7 @@ export default function Nav() {
   return (
     <StyledNav>
       <NavLogo>
-        <img src={Logo} alt="logo"></img>
+        <img src={Logo} alt="logo" onClick={() => scrollIntoView("about")} />
       </NavLogo>
 
       {window.innerWidth < 600 ? (
