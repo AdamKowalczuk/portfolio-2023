@@ -32,14 +32,15 @@ const Ul = styled.ul`
 
 const Li = styled.li`
   float: right;
-  a {
+  p {
     display: block;
     color: ${theme.colors.gray};
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    cursor: pointer;
   }
-  a:hover {
+  p:hover {
     color: #fff;
   }
 `;
@@ -95,6 +96,14 @@ const MenuButton = ({ isOpen = false, width = 24, height = 24, strokeWidth = 1, 
   );
 };
 
+const scrollIntoView = (item) => {
+  let element = document.getElementById(item);
+  const yOffset = -90;
+  const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+  window.scrollTo({ top: y, behavior: "smooth" });
+};
+
 export default function Nav() {
   const [isOpen, setOpen] = React.useState(false);
   return (
@@ -107,14 +116,14 @@ export default function Nav() {
         <>
           {isOpen ? (
             <Ul>
-              <Li key="1">
-                <a href="#projects">Projects</a>
+              <Li key="1" onClick={() => scrollIntoView("projects")}>
+                <p>Projects</p>
               </Li>
-              <Li key="2">
-                <a href="#skills">Skills</a>
+              <Li key="2" onClick={() => scrollIntoView("skills")}>
+                <p>Skills</p>
               </Li>
-              <Li key="3">
-                <a href="#about">About</a>
+              <Li key="3" onClick={() => scrollIntoView("about")}>
+                <p>About</p>
               </Li>
             </Ul>
           ) : null}
@@ -129,14 +138,14 @@ export default function Nav() {
         </>
       ) : (
         <Ul>
-          <Li>
-            <a href="#projects">Projects</a>
+          <Li key="1" onClick={() => scrollIntoView("projects")}>
+            <p>Projects</p>
           </Li>
-          <Li>
-            <a href="#skills">Skills</a>
+          <Li key="2" onClick={() => scrollIntoView("skills")}>
+            <p>Skills</p>
           </Li>
-          <Li>
-            <a href="#about">About</a>
+          <Li key="3" onClick={() => scrollIntoView("about")}>
+            <p>About</p>
           </Li>
         </Ul>
       )}
