@@ -15,6 +15,8 @@ import FigmaIcon from "../../assets/skills-icons/figma-icon.svg";
 import AdobeXDIcon from "../../assets/skills-icons/adobexd-icon.svg";
 import GatsbyIcon from "../../assets/skills-icons/gatsby-icon.svg";
 import PwaIcon from "../../assets/skills-icons/pwa-icon.svg";
+import TypeScriptIcon from "../../assets/skills-icons/typescript.svg";
+import GraphQLIcon from "../../assets/skills-icons/graphql.svg";
 import { motion, useInView } from "framer-motion";
 
 const SectionHeader = styled.div`
@@ -84,12 +86,20 @@ let skills = [
         img: JavaScriptIcon,
       },
       {
+        name: "TypeScript",
+        img: TypeScriptIcon,
+      },
+      {
         name: "React",
         img: ReactIcon,
       },
       {
         name: "Redux",
         img: ReduxIcon,
+      },
+      {
+        name: "GraphQL",
+        img: GraphQLIcon,
       },
       {
         name: "SASS",
