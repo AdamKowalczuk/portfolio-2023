@@ -1,4 +1,4 @@
-import React, { Component, useRef } from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import theme from "../../styles/theme";
 import HtmlIcon from "../../assets/skills-icons/html-icon.svg";
