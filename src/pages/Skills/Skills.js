@@ -15,8 +15,11 @@ import FigmaIcon from "../../assets/skills-icons/figma-icon.svg";
 import AdobeXDIcon from "../../assets/skills-icons/adobexd-icon.svg";
 import GatsbyIcon from "../../assets/skills-icons/gatsby-icon.svg";
 import PwaIcon from "../../assets/skills-icons/pwa-icon.svg";
-import TypeScriptIcon from "../../assets/skills-icons/typescript.svg";
-import GraphQLIcon from "../../assets/skills-icons/graphql.svg";
+import TypeScriptIcon from "../../assets/skills-icons/typescript-icon.svg";
+import GraphQLIcon from "../../assets/skills-icons/graphql-icon.svg";
+import TailwindIcon from "../../assets/skills-icons/tailwind-icon.svg";
+import NextIcon from "../../assets/skills-icons/nextjs-icon.svg";
+import PrismaIcon from "../../assets/skills-icons/prisma-icon.svg";
 import { motion, useInView } from "framer-motion";
 
 const SectionHeader = styled.div`
@@ -27,7 +30,6 @@ const SectionHeader = styled.div`
 `;
 
 const SkillsWrapper = styled.div`
-  // padding: 50px;
   h3 {
     margin-bottom: 10px;
   }
@@ -53,6 +55,10 @@ const Skill = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  img {
+    width: 60px;
+    height: 60px;
+  }
   p {
     color: ${theme.colors.white};
     font-size: 20px;
@@ -105,6 +111,14 @@ let skills = [
         name: "SASS",
         img: SassIcon,
       },
+      {
+        name: "Tailwind CSS",
+        img: TailwindIcon,
+      },
+      {
+        name: "Next.js (basic)",
+        img: NextIcon,
+      },
     ],
   },
   {
@@ -117,6 +131,10 @@ let skills = [
       {
         name: "MongoDB",
         img: MongoIcon,
+      },
+      {
+        name: "Prisma",
+        img: PrismaIcon,
       },
     ],
   },

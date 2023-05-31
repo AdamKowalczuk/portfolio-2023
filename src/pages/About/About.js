@@ -54,6 +54,7 @@ const AboutDescription = styled.div`
   }
   p {
     color: ${theme.colors.gray};
+    font-size: 18px;
     b {
       color: ${theme.colors.white};
       font-weight: 700;
@@ -62,6 +63,9 @@ const AboutDescription = styled.div`
   @media only screen and (max-width: 1000px) {
     width: auto;
     padding: 20px;
+    p {
+      font-size: 16px;
+    }
   }
   @media only screen and (max-width: 600px) {
     margin: 30px 0;
