@@ -334,7 +334,7 @@ export default function Projects() {
             image={Project2Image}
           ></ProjectImage>
         </Project>
-        <Project>
+        {/* <Project>
           <ProjectImage
             ref={ref6}
             style={{
@@ -381,6 +381,81 @@ export default function Projects() {
               </ProjectLine>
             </ProjectTechnologies>
             <a target="_blank" rel="noreferrer" href="https://github.com/AdamKowalczuk/bmi-calculator-typescript-webpack">
+              <ProjectButton whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
+                <GithubIcon />
+                Go to github
+                <div></div>
+              </ProjectButton>
+            </a>
+          </ProjectSummary>
+        </Project> */}
+        <Project>
+          <ProjectImage
+            ref={ref6}
+            style={{
+              transform: isInView6 ? "none" : "translateX(-200px)",
+              opacity: isInView6 ? 1 : 0,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+            image={Project3Image}
+          ></ProjectImage>
+          <ProjectSummary
+            ref={ref7}
+            style={{
+              transform: isInView7 ? "none" : "translateX(-200px)",
+              opacity: isInView7 ? 1 : 0,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+          >
+            <ProjectTitle>Netflix clone</ProjectTitle>
+            <ProjectDescription>
+              A TypeScript, Next.js, and Prisma-powered Netflix clone project that emulates the renowned streaming platform's design and features.
+            </ProjectDescription>
+            <ProjectTechnologies>
+              <ProjectLine>
+                <ProjectTech>
+                  <Checkbox>
+                    <Check />
+                  </Checkbox>
+                  <p>React</p>
+                </ProjectTech>
+                <ProjectTech>
+                  <Checkbox>
+                    <Check />
+                  </Checkbox>
+                  <p>TypeScript</p>
+                </ProjectTech>
+              </ProjectLine>
+              <ProjectLine>
+                <ProjectTech>
+                  <Checkbox>
+                    <Check />
+                  </Checkbox>
+                  <p>Tailwind CSS</p>
+                </ProjectTech>
+                <ProjectTech>
+                  <Checkbox>
+                    <Check />
+                  </Checkbox>
+                  <p>Next.js</p>
+                </ProjectTech>
+              </ProjectLine>
+              <ProjectLine style={{ borderBottom: 0 }}>
+                <ProjectTech>
+                  <Checkbox>
+                    <Check />
+                  </Checkbox>
+                  <p>Prisma</p>
+                </ProjectTech>
+                <ProjectTech>
+                  <Checkbox>
+                    <Check />
+                  </Checkbox>
+                  <p>MongoDB</p>
+                </ProjectTech>
+              </ProjectLine>
+            </ProjectTechnologies>
+            <a target="_blank" rel="noreferrer" href="https://github.com/AdamKowalczuk/netflix-clone">
               <ProjectButton whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
                 <GithubIcon />
                 Go to github

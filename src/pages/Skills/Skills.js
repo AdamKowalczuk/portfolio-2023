@@ -116,7 +116,7 @@ let skills = [
         img: TailwindIcon,
       },
       {
-        name: "Next.js (basic)",
+        name: "Next.js",
         img: NextIcon,
       },
     ],
