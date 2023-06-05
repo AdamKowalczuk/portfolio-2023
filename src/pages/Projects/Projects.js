@@ -35,9 +35,9 @@ const Project = styled.div`
   width: 100%;
   gap: 50px;
   justify-content: center;
-  .last-project {
-    height: 490px;
-  }
+  // .last-project {
+  //   height: 490px;
+  // }
   @media only screen and (max-width: 1200px) {
     flex-direction: ${(props) => (props.reverse ? "column-reverse" : "column")};
     width: 100%;
@@ -45,9 +45,9 @@ const Project = styled.div`
     align-items: center;
   }
   @media only screen and (max-width: 600px) {
-    .last-project {
-      height: calc(100vw - 60px);
-    }
+    // .last-project {
+    //   height: calc(100vw - 60px);
+    // }
     .last-project-text {
       height: auto;
     }
