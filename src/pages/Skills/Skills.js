@@ -192,36 +192,33 @@ export default function Skills() {
       </SectionHeader>
 
       <SkillsWrapper>
-        {skills.map((skill, index) => {
+        {skills.map((skill, id) => {
           return (
-            <>
-              <SkillsSection
-                style={{
-                  transform: isInView ? "none" : "translateX(-200px)",
-                  opacity: isInView ? 1 : 0,
-                  transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-                }}
-              >
-                <h3>{skill.section}</h3>
-                <SkillsIconsWrapper>
-                  {skill.items.map((item) => {
-                    return (
-                      <>
-                        <Skill>
-                          <motion.img
-                            src={item.img}
-                            alt={item.name}
-                            whileHover={{ scale: 1.2 }}
-                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                          />
-                          <p>{item.name} </p>
-                        </Skill>
-                      </>
-                    );
-                  })}
-                </SkillsIconsWrapper>
-              </SkillsSection>
-            </>
+            <SkillsSection
+              key={id}
+              style={{
+                transform: isInView ? "none" : "translateX(-200px)",
+                opacity: isInView ? 1 : 0,
+                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+              }}
+            >
+              <h3>{skill.section}</h3>
+              <SkillsIconsWrapper>
+                {skill.items.map((item, id) => {
+                  return (
+                    <Skill key={id}>
+                      <motion.img
+                        src={item.img}
+                        alt={item.name}
+                        whileHover={{ scale: 1.2 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      />
+                      <p>{item.name} </p>
+                    </Skill>
+                  );
+                })}
+              </SkillsIconsWrapper>
+            </SkillsSection>
           );
         })}
       </SkillsWrapper>

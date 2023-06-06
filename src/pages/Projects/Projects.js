@@ -22,6 +22,7 @@ const ProjectsWrapper = styled.div`
   gap: 50px;
   margin-top: 50px;
   margin-bottom: 50px;
+  overflow: hidden;
   @media only screen and (max-width: 1200px) {
     gap: 20px;
     margin-top: 20px;
