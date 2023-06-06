@@ -487,12 +487,20 @@ export default function Projects() {
                   <p>React</p>
                 </ProjectTech>
               </ProjectLine>
-              <ProjectLine style={{ borderBottom: 0 }}>
+              <ProjectLine>
                 <ProjectTech>
                   <Checkbox>
                     <Check />
                   </Checkbox>
                   <p>PayPal sandbox</p>
+                </ProjectTech>
+              </ProjectLine>
+              <ProjectLine style={{ borderBottom: 0 }}>
+                <ProjectTech>
+                  <Checkbox>
+                    <Check />
+                  </Checkbox>
+                  <p>React router</p>
                 </ProjectTech>
               </ProjectLine>
             </ProjectTechnologies>
