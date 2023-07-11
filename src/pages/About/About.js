@@ -1,4 +1,4 @@
-import React, { Component, useRef } from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import theme from "../../styles/theme";
 import Avatar from "../../assets/avatar.png";

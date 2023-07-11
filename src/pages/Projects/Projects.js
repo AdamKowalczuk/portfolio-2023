@@ -1,4 +1,4 @@
-import React, { Component, useRef } from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { ReactComponent as GithubIcon } from "../../assets/social-icons/github-icon.svg";
 import theme from "../../styles/theme";
