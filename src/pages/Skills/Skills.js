@@ -21,6 +21,8 @@ import TailwindIcon from "../../assets/skills-icons/tailwind-icon.svg";
 import NextIcon from "../../assets/skills-icons/nextjs-icon.svg";
 import PrismaIcon from "../../assets/skills-icons/prisma-icon.svg";
 import CypressIcon from "../../assets/skills-icons/cypress-icon.svg";
+import ReactTestingLibraryIcon from "../../assets/skills-icons/react-testing-library-icon.svg";
+import JestIcon from "../../assets/skills-icons/jest-icon.svg";
 import { motion, useInView } from "framer-motion";
 
 const SectionHeader = styled.div`
@@ -172,8 +174,12 @@ let skills = [
         img: PwaIcon,
       },
       {
-        name: "Cypress",
-        img: CypressIcon,
+        name: "Jest",
+        img: JestIcon,
+      },
+      {
+        name: "React Testing Library",
+        img: ReactTestingLibraryIcon,
       },
     ],
   },
