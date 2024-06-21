@@ -19,10 +19,14 @@ import TypeScriptIcon from "../../assets/skills-icons/typescript-icon.svg";
 import GraphQLIcon from "../../assets/skills-icons/graphql-icon.svg";
 import TailwindIcon from "../../assets/skills-icons/tailwind-icon.svg";
 import NextIcon from "../../assets/skills-icons/nextjs-icon.svg";
-import PrismaIcon from "../../assets/skills-icons/prisma-icon.svg";
 import CypressIcon from "../../assets/skills-icons/cypress-icon.svg";
 import ReactTestingLibraryIcon from "../../assets/skills-icons/react-testing-library-icon.svg";
 import JestIcon from "../../assets/skills-icons/jest-icon.svg";
+import StyledComponentIcon from "../../assets/skills-icons/styled-components-icon.png";
+import ChakraUIIcon from "../../assets/skills-icons/chakra-ui-icon.png";
+import MaterialUIIcon from "../../assets/skills-icons/material-ui-icon.png";
+import PostmanIcon from "../../assets/skills-icons/postman-icon.svg";
+import CsharpIcon from "../../assets/skills-icons/csharp-icon.png";
 import { motion, useInView } from "framer-motion";
 
 const SectionHeader = styled.div`
@@ -87,10 +91,6 @@ let skills = [
         img: HtmlIcon,
       },
       {
-        name: "CSS",
-        img: CssIcon,
-      },
-      {
         name: "JavaScript",
         img: JavaScriptIcon,
       },
@@ -111,6 +111,19 @@ let skills = [
         img: GraphQLIcon,
       },
       {
+        name: "Next.js",
+        img: NextIcon,
+      },
+    ],
+  },
+  {
+    section: "Styling",
+    items: [
+      {
+        name: "CSS",
+        img: CssIcon,
+      },
+      {
         name: "SASS",
         img: SassIcon,
       },
@@ -119,8 +132,16 @@ let skills = [
         img: TailwindIcon,
       },
       {
-        name: "Next.js",
-        img: NextIcon,
+        name: "Chakra UI",
+        img: ChakraUIIcon,
+      },
+      {
+        name: "Material UI",
+        img: MaterialUIIcon,
+      },
+      {
+        name: "Styled Components",
+        img: StyledComponentIcon,
       },
     ],
   },
@@ -136,8 +157,8 @@ let skills = [
         img: MongoIcon,
       },
       {
-        name: "Prisma",
-        img: PrismaIcon,
+        name: "C#",
+        img: CsharpIcon,
       },
     ],
   },
@@ -160,6 +181,10 @@ let skills = [
         name: "Adobe XD",
         img: AdobeXDIcon,
       },
+      {
+        name: "Postman",
+        img: PostmanIcon,
+      },
     ],
   },
   {
@@ -176,6 +201,10 @@ let skills = [
       {
         name: "Jest",
         img: JestIcon,
+      },
+      {
+        name: "Cypress",
+        img: CypressIcon,
       },
       {
         name: "React Testing Library",
@@ -222,7 +251,11 @@ export default function Skills() {
                         src={item.img}
                         alt={item.name}
                         whileHover={{ scale: 1.2 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 10,
+                        }}
                       />
                       <p>{item.name} </p>
                     </Skill>
