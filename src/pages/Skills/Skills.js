@@ -13,8 +13,6 @@ import GitIcon from "../../assets/skills-icons/git-icon.svg";
 import VsCodeIcon from "../../assets/skills-icons/vs-icon.svg";
 import FigmaIcon from "../../assets/skills-icons/figma-icon.svg";
 import AdobeXDIcon from "../../assets/skills-icons/adobexd-icon.svg";
-import GatsbyIcon from "../../assets/skills-icons/gatsby-icon.svg";
-import PwaIcon from "../../assets/skills-icons/pwa-icon.svg";
 import TypeScriptIcon from "../../assets/skills-icons/typescript-icon.svg";
 import GraphQLIcon from "../../assets/skills-icons/graphql-icon.svg";
 import TailwindIcon from "../../assets/skills-icons/tailwind-icon.svg";
@@ -27,6 +25,7 @@ import ChakraUIIcon from "../../assets/skills-icons/chakra-ui-icon.png";
 import MaterialUIIcon from "../../assets/skills-icons/material-ui-icon.png";
 import PostmanIcon from "../../assets/skills-icons/postman-icon.svg";
 import CsharpIcon from "../../assets/skills-icons/csharp-icon.png";
+import ShadcnUIIcon from "../../assets/skills-icons/shadcn.png";
 import { motion, useInView } from "framer-motion";
 
 const SectionHeader = styled.div`
@@ -143,6 +142,10 @@ let skills = [
         name: "Styled Components",
         img: StyledComponentIcon,
       },
+      {
+        name: "Shadcn/UI",
+        img: ShadcnUIIcon,
+      },
     ],
   },
   {
@@ -188,27 +191,19 @@ let skills = [
     ],
   },
   {
-    section: "Other",
+    section: "Testing",
     items: [
-      {
-        name: "Gatsby",
-        img: GatsbyIcon,
-      },
-      {
-        name: "PWA",
-        img: PwaIcon,
-      },
       {
         name: "Jest",
         img: JestIcon,
       },
       {
-        name: "Cypress",
-        img: CypressIcon,
-      },
-      {
         name: "React Testing Library",
         img: ReactTestingLibraryIcon,
+      },
+      {
+        name: "Cypress",
+        img: CypressIcon,
       },
     ],
   },

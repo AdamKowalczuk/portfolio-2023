@@ -128,11 +128,18 @@ export default function About() {
       >
         <h3>Something about me</h3>
         <p>
-          As a <b>frontend developer</b> specializing in React, I am committed to creating visually appealing and engaging user interfaces for web
-          applications. Along with my passion for coding, I am an avid <b>runner</b>, <b>book lover</b>, and <b>board game</b> enthusiast. My
-          portfolio showcases my skills in <b>React development</b>, including responsive design and <b>user-friendly interfaces</b>. When I'm not
-          coding, you can find me lacing up my running shoes for a morning jog, curling up with a good book,or challenging myself with a new board
-          game. Let's work together to bring your web application to <b>life!</b>
+          As a <b>frontend developer</b> specializing in <b>React</b> and{" "}
+          <b>Next.js</b>, I am dedicated to building visually appealing and
+          highly interactive <b>user interfaces</b> for web applications. My
+          passion for coding goes hand in hand with my attention to detail,
+          ensuring every project is responsive and user-friendly. Outside of
+          development, I enjoy <b>running</b>, <b>reading</b>, and exploring new{" "}
+          <b>board games</b>. My portfolio highlights my expertise in
+          <b> React</b>, showcasing projects that prioritize seamless design and
+          intuitive user experiences. When I'm not <b>coding</b>, you can find
+          me either on a morning jog, diving into a great book, or strategizing
+          over a board game. Feel free to explore my <b>portfolio</b> and get in
+          touch if you'd like to know more.
         </p>
       </AboutDescription>
     </>
