@@ -1,32 +1,32 @@
-import React, { useRef } from "react";
-import styled from "styled-components";
-import theme from "../../styles/theme";
-import HtmlIcon from "../../assets/skills-icons/html-icon.svg";
-import CssIcon from "../../assets/skills-icons/css-icon.svg";
-import JavaScriptIcon from "../../assets/skills-icons/js-icon.svg";
-import ReactIcon from "../../assets/skills-icons/react-icon.svg";
-import ReduxIcon from "../../assets/skills-icons/redux-icon.svg";
-import SassIcon from "../../assets/skills-icons/sass-icon.svg";
-import NodeIcon from "../../assets/skills-icons/nodejs-icon.svg";
-import MongoIcon from "../../assets/skills-icons/mongodb-icon.svg";
-import GitIcon from "../../assets/skills-icons/git-icon.svg";
-import VsCodeIcon from "../../assets/skills-icons/vs-icon.svg";
-import FigmaIcon from "../../assets/skills-icons/figma-icon.svg";
-import AdobeXDIcon from "../../assets/skills-icons/adobexd-icon.svg";
-import TypeScriptIcon from "../../assets/skills-icons/typescript-icon.svg";
-import GraphQLIcon from "../../assets/skills-icons/graphql-icon.svg";
-import TailwindIcon from "../../assets/skills-icons/tailwind-icon.svg";
-import NextIcon from "../../assets/skills-icons/nextjs-icon.svg";
-import CypressIcon from "../../assets/skills-icons/cypress-icon.svg";
-import ReactTestingLibraryIcon from "../../assets/skills-icons/react-testing-library-icon.svg";
-import JestIcon from "../../assets/skills-icons/jest-icon.svg";
-import StyledComponentIcon from "../../assets/skills-icons/styled-components-icon.png";
-import ChakraUIIcon from "../../assets/skills-icons/chakra-ui-icon.png";
-import MaterialUIIcon from "../../assets/skills-icons/material-ui-icon.png";
-import PostmanIcon from "../../assets/skills-icons/postman-icon.svg";
-import CsharpIcon from "../../assets/skills-icons/csharp-icon.png";
-import ShadcnUIIcon from "../../assets/skills-icons/shadcn.png";
-import { motion, useInView } from "framer-motion";
+import React, { useRef } from 'react';
+import styled from 'styled-components';
+import theme from '../../styles/theme';
+import HtmlIcon from '../../assets/skills-icons/html-icon.svg';
+import CssIcon from '../../assets/skills-icons/css-icon.svg';
+import JavaScriptIcon from '../../assets/skills-icons/js-icon.svg';
+import ReactIcon from '../../assets/skills-icons/react-icon.svg';
+import ReduxIcon from '../../assets/skills-icons/redux-icon.svg';
+import SassIcon from '../../assets/skills-icons/sass-icon.svg';
+import NodeIcon from '../../assets/skills-icons/nodejs-icon.svg';
+import MongoIcon from '../../assets/skills-icons/mongodb-icon.svg';
+import GitIcon from '../../assets/skills-icons/git-icon.svg';
+import VsCodeIcon from '../../assets/skills-icons/vs-icon.svg';
+import FigmaIcon from '../../assets/skills-icons/figma-icon.svg';
+import AdobeXDIcon from '../../assets/skills-icons/adobexd-icon.svg';
+import TypeScriptIcon from '../../assets/skills-icons/typescript-icon.svg';
+import GraphQLIcon from '../../assets/skills-icons/graphql-icon.svg';
+import TailwindIcon from '../../assets/skills-icons/tailwind-icon.svg';
+import NextIcon from '../../assets/skills-icons/nextjs-icon.svg';
+import CypressIcon from '../../assets/skills-icons/cypress-icon.svg';
+import ReactTestingLibraryIcon from '../../assets/skills-icons/react-testing-library-icon.svg';
+import JestIcon from '../../assets/skills-icons/jest-icon.svg';
+import StyledComponentIcon from '../../assets/skills-icons/styled-components-icon.png';
+import ChakraUIIcon from '../../assets/skills-icons/chakra-ui-icon.png';
+import MaterialUIIcon from '../../assets/skills-icons/material-ui-icon.png';
+import PostmanIcon from '../../assets/skills-icons/postman-icon.svg';
+import CsharpIcon from '../../assets/skills-icons/csharp-icon.png';
+import ShadcnUIIcon from '../../assets/skills-icons/shadcn.png';
+import { motion, useInView } from 'framer-motion';
 
 const SectionHeader = styled.div`
   margin-top: 200px;
@@ -83,126 +83,126 @@ const Skill = styled(motion.div)`
 
 let skills = [
   {
-    section: "Frontend",
+    section: 'Frontend',
     items: [
       {
-        name: "HTML",
+        name: 'HTML',
         img: HtmlIcon,
       },
       {
-        name: "JavaScript",
+        name: 'JavaScript',
         img: JavaScriptIcon,
       },
       {
-        name: "TypeScript",
+        name: 'TypeScript',
         img: TypeScriptIcon,
       },
       {
-        name: "React",
+        name: 'React',
         img: ReactIcon,
       },
       {
-        name: "Redux",
+        name: 'Redux',
         img: ReduxIcon,
       },
       {
-        name: "GraphQL",
+        name: 'GraphQL',
         img: GraphQLIcon,
       },
       {
-        name: "Next.js",
+        name: 'Next.js',
         img: NextIcon,
       },
     ],
   },
   {
-    section: "Styling",
+    section: 'Styling',
     items: [
       {
-        name: "CSS",
+        name: 'CSS',
         img: CssIcon,
       },
       {
-        name: "SASS",
+        name: 'SASS',
         img: SassIcon,
       },
       {
-        name: "Tailwind CSS",
+        name: 'Tailwind CSS',
         img: TailwindIcon,
       },
       {
-        name: "Chakra UI",
+        name: 'Chakra UI',
         img: ChakraUIIcon,
       },
       {
-        name: "Material UI",
+        name: 'Material UI',
         img: MaterialUIIcon,
       },
       {
-        name: "Styled Components",
+        name: 'Styled Components',
         img: StyledComponentIcon,
       },
       {
-        name: "Shadcn/UI",
+        name: 'Shadcn/UI',
         img: ShadcnUIIcon,
       },
     ],
   },
   {
-    section: "Backend",
+    section: 'Backend',
     items: [
       {
-        name: "Node.js",
+        name: 'Node.js',
         img: NodeIcon,
       },
       {
-        name: "MongoDB",
+        name: 'MongoDB',
         img: MongoIcon,
       },
-      {
-        name: "C#",
-        img: CsharpIcon,
-      },
+      // {
+      //   name: "C#",
+      //   img: CsharpIcon,
+      // },
     ],
   },
   {
-    section: "Tools",
+    section: 'Tools',
     items: [
       {
-        name: "Git",
+        name: 'Git',
         img: GitIcon,
       },
       {
-        name: "VSCode",
+        name: 'VSCode',
         img: VsCodeIcon,
       },
       {
-        name: "Figma",
+        name: 'Figma',
         img: FigmaIcon,
       },
       {
-        name: "Adobe XD",
+        name: 'Adobe XD',
         img: AdobeXDIcon,
       },
       {
-        name: "Postman",
+        name: 'Postman',
         img: PostmanIcon,
       },
     ],
   },
   {
-    section: "Testing",
+    section: 'Testing',
     items: [
       {
-        name: "Jest",
+        name: 'Jest',
         img: JestIcon,
       },
       {
-        name: "React Testing Library",
+        name: 'React Testing Library',
         img: ReactTestingLibraryIcon,
       },
       {
-        name: "Cypress",
+        name: 'Cypress',
         img: CypressIcon,
       },
     ],
@@ -217,9 +217,9 @@ export default function Skills() {
       <SectionHeader
         ref={ref1}
         style={{
-          transform: isInView ? "none" : "translateX(-200px)",
+          transform: isInView ? 'none' : 'translateX(-200px)',
           opacity: isInView ? 1 : 0,
-          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
         }}
       >
         <h4 id="skills">Some technical stuff.</h4>
@@ -232,9 +232,9 @@ export default function Skills() {
             <SkillsSection
               key={id}
               style={{
-                transform: isInView ? "none" : "translateX(-200px)",
+                transform: isInView ? 'none' : 'translateX(-200px)',
                 opacity: isInView ? 1 : 0,
-                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+                transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
               }}
             >
               <h3>{skill.section}</h3>
@@ -247,7 +247,7 @@ export default function Skills() {
                         alt={item.name}
                         whileHover={{ scale: 1.2 }}
                         transition={{
-                          type: "spring",
+                          type: 'spring',
                           stiffness: 400,
                           damping: 10,
                         }}
