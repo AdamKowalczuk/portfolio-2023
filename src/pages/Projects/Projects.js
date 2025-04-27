@@ -6,7 +6,6 @@ import Project1Image from "../../assets/projects-images/project1.png";
 import Project2Image from "../../assets/projects-images/project2.png";
 import Project3Image from "../../assets/projects-images/project3.png";
 import Project4Image from "../../assets/projects-images/project4.png";
-import { ReactComponent as Check } from "../../assets/check.svg";
 import { motion, useInView } from "framer-motion";
 
 const SectionHeader = styled.div`
@@ -30,7 +29,52 @@ const ProjectsWrapper = styled.div`
   }
 `;
 
-const Project = styled.div`
+const projectsData = [
+  {
+    title: 'WebFront',
+    image: Project1Image,
+    alt: 'WebFront project screenshot',
+    description: 'This application utilizes MERN stack and JSON Web Token to provide an interactive platform for learning HTML, CSS, and JavaScript.',
+    github: 'https://github.com/AdamKowalczuk/praca-inzynierska-client',
+    technologies: [
+      'React', 'MongoDB', 'Redux', 'Node.js', 'PWA', 'Express.js'
+    ],
+  },
+  {
+    title: 'Plan Harmony',
+    image: Project2Image,
+    alt: 'Plan Harmony project screenshot',
+    description: 'An application to create a daily planner, organize tasks and goals, and save notes. An application that allows you to view and analyze your activity.',
+    github: 'https://github.com/AdamKowalczuk/plan-harmony',
+    technologies: [
+      'React', 'Framer motion', 'Redux'
+    ],
+    reverse: true,
+  },
+  {
+    title: 'Netflix clone',
+    image: Project3Image,
+    alt: 'Netflix clone project screenshot',
+    description: 'A TypeScript, Next.js, and Prisma-powered Netflix clone project that emulates the renowned streaming platform\'s design and features.',
+    github: 'https://github.com/AdamKowalczuk/netflix-clone',
+    technologies: [
+      'React', 'TypeScript', 'Tailwind CSS', 'Next.js', 'Prisma', 'MongoDB'
+    ],
+  },
+  {
+    title: 'Nerd Shop',
+    image: Project4Image,
+    alt: 'Nerd Shop project screenshot',
+    description: 'E-commerce website which offers a diverse range of products and utilizes PayPal for secure and convenient online payments.',
+    github: 'https://github.com/AdamKowalczuk/e-commerce-react',
+    technologies: [
+      'React', 'PayPal sandbox', 'React router'
+    ],
+    reverse: true,
+  },
+];
+
+const Project = styled(motion.div)`
   display: flex;
   margin: auto;
   width: 100%;
@@ -70,9 +114,14 @@ const ProjectImage = styled.div`
   }
 `;
 
+const ProjectSummaryWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 const ProjectSummary = styled.div`
   width: 550px;
-  height: 550px;
+  height:fit-content;
   background-color: rgb(29, 31, 40);
   padding: 0px 40px;
   box-sizing: border-box;
@@ -97,25 +146,23 @@ const ProjectDescription = styled.p`
   }
 `;
 
-const ProjectTechnologies = styled.div``;
-
-const ProjectLine = styled.div`
-  border-bottom: 2px solid rgb(255, 255, 255, 0.1);
-  padding: 10px 0;
-  display: flex;
+const ProjectTechnologies = styled.div`
+  margin: 12px 0 18px 0;
 `;
 
-const ProjectTech = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  color: ${theme.colors.white};
-  width: 50%;
-  @media only screen and (max-width: 600px) {
-    p {
-      font-size: 12px;
-    }
-  }
+const TechPill = styled.span`
+  display: inline-block;
+  background: rgba(81, 50, 192, 0.13);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 4px 12px;
+  margin: 0 6px 6px 0;
+  border: 1px solid rgba(81, 50, 192, 0.18);
+  box-shadow: none;
+  letter-spacing: 0.01em;
+  transition: background 0.2s, color 0.2s;
 `;
 
 const Checkbox = styled.div`
@@ -169,24 +216,7 @@ const ProjectButton = styled(motion.div)`
 
 export default function Projects() {
   const ref1 = useRef(null);
-  const ref2 = useRef(null);
-  const ref3 = useRef(null);
-  const ref4 = useRef(null);
-  const ref5 = useRef(null);
-  const ref6 = useRef(null);
-  const ref7 = useRef(null);
-  const ref8 = useRef(null);
-  const ref9 = useRef(null);
-
   const isInView1 = useInView(ref1, { once: true });
-  const isInView2 = useInView(ref2, { once: true });
-  const isInView3 = useInView(ref3, { once: true });
-  const isInView4 = useInView(ref4, { once: true });
-  const isInView5 = useInView(ref5, { once: true });
-  const isInView6 = useInView(ref6, { once: true });
-  const isInView7 = useInView(ref7, { once: true });
-  const isInView8 = useInView(ref8, { once: true });
-  const isInView9 = useInView(ref9, { once: true });
   return (
     <>
       <SectionHeader
@@ -202,328 +232,41 @@ export default function Projects() {
         <h2>My Work</h2>
       </SectionHeader>
       <ProjectsWrapper>
-        <Project>
-          <ProjectImage
-            ref={ref2}
-            style={{
-              transform: isInView2 ? "none" : "translateX(-200px)",
-              opacity: isInView2 ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-            }}
-            image={Project1Image}
-          ></ProjectImage>
-          <ProjectSummary
-            ref={ref3}
-            style={{
-              transform: isInView3 ? "none" : "translateX(-200px)",
-              opacity: isInView3 ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-            }}
+        {projectsData.map((project, idx) => (
+          <Project
+            key={project.title}
+            reverse={project.reverse}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: idx * 0.1 }}
           >
-            <ProjectTitle>WebFront</ProjectTitle>
-            <ProjectDescription>
-              This application utilizes MERN stack and JSON Web Token to provide an interactive platform for learning HTML, CSS, and JavaScript.
-            </ProjectDescription>
-            <ProjectTechnologies>
-              <ProjectLine>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>React</p>
-                </ProjectTech>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>MongoDB</p>
-                </ProjectTech>
-              </ProjectLine>
-              <ProjectLine>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>Redux</p>
-                </ProjectTech>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>Node.js</p>
-                </ProjectTech>
-              </ProjectLine>
-              <ProjectLine style={{ borderBottom: 0 }}>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>PWA</p>
-                </ProjectTech>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>Express.js</p>
-                </ProjectTech>
-              </ProjectLine>
-            </ProjectTechnologies>
-            <a target="_blank" rel="noreferrer" href="https://github.com/AdamKowalczuk/praca-inzynierska-client">
-              <ProjectButton whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
-                <GithubIcon />
-                Go to github
-                <div></div>
-              </ProjectButton>
-            </a>
-          </ProjectSummary>
-        </Project>
-        <Project reverse={true}>
-          <ProjectSummary
-            ref={ref4}
-            style={{
-              transform: isInView4 ? "none" : "translateX(200px)",
-              opacity: isInView4 ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-            }}
-          >
-            <ProjectTitle>Plan Harmony</ProjectTitle>
-            <ProjectDescription>
-              An application to create a daily planner, organize tasks and goals, and save notes. An application that allows you to view and analyze
-              your activity.
-            </ProjectDescription>
-            <ProjectTechnologies>
-              <ProjectLine>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>React</p>
-                </ProjectTech>
-              </ProjectLine>
-              <ProjectLine>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>Framer motion</p>
-                </ProjectTech>
-              </ProjectLine>
-              <ProjectLine style={{ borderBottom: 0 }}>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>Redux</p>
-                </ProjectTech>
-              </ProjectLine>
-            </ProjectTechnologies>
-            <a target="_blank" rel="noreferrer" href="https://github.com/AdamKowalczuk/plan-harmony">
-              <ProjectButton whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
-                <GithubIcon />
-                Go to github
-                <div></div>
-              </ProjectButton>
-            </a>
-          </ProjectSummary>
-          <ProjectImage
-            ref={ref5}
-            style={{
-              transform: isInView5 ? "none" : "translateX(200px)",
-              opacity: isInView5 ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-            }}
-            image={Project2Image}
-          ></ProjectImage>
-        </Project>
-        {/* <Project>
-          <ProjectImage
-            ref={ref6}
-            style={{
-              transform: isInView6 ? "none" : "translateX(-200px)",
-              opacity: isInView6 ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-            }}
-            image={Project3Image}
-          ></ProjectImage>
-          <ProjectSummary
-            ref={ref7}
-            style={{
-              transform: isInView7 ? "none" : "translateX(-200px)",
-              opacity: isInView7 ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-            }}
-          >
-            <ProjectTitle>BMI - calculator</ProjectTitle>
-            <ProjectDescription>Calculator for calculating body mass index built in TypeScript and with the help of Webpack</ProjectDescription>
-            <ProjectTechnologies>
-              <ProjectLine>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>React</p>
-                </ProjectTech>
-              </ProjectLine>
-              <ProjectLine>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>Typescript</p>
-                </ProjectTech>
-              </ProjectLine>
-              <ProjectLine style={{ borderBottom: 0 }}>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>Webpack</p>
-                </ProjectTech>
-              </ProjectLine>
-            </ProjectTechnologies>
-            <a target="_blank" rel="noreferrer" href="https://github.com/AdamKowalczuk/bmi-calculator-typescript-webpack">
-              <ProjectButton whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
-                <GithubIcon />
-                Go to github
-                <div></div>
-              </ProjectButton>
-            </a>
-          </ProjectSummary>
-        </Project> */}
-        <Project>
-          <ProjectImage
-            ref={ref6}
-            style={{
-              transform: isInView6 ? "none" : "translateX(-200px)",
-              opacity: isInView6 ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-            }}
-            image={Project3Image}
-          ></ProjectImage>
-          <ProjectSummary
-            ref={ref7}
-            style={{
-              transform: isInView7 ? "none" : "translateX(-200px)",
-              opacity: isInView7 ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-            }}
-          >
-            <ProjectTitle>Netflix clone</ProjectTitle>
-            <ProjectDescription>
-              A TypeScript, Next.js, and Prisma-powered Netflix clone project that emulates the renowned streaming platform's design and features.
-            </ProjectDescription>
-            <ProjectTechnologies>
-              <ProjectLine>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>React</p>
-                </ProjectTech>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>TypeScript</p>
-                </ProjectTech>
-              </ProjectLine>
-              <ProjectLine>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>Tailwind CSS</p>
-                </ProjectTech>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>Next.js</p>
-                </ProjectTech>
-              </ProjectLine>
-              <ProjectLine style={{ borderBottom: 0 }}>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>Prisma</p>
-                </ProjectTech>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>MongoDB</p>
-                </ProjectTech>
-              </ProjectLine>
-            </ProjectTechnologies>
-            <a target="_blank" rel="noreferrer" href="https://github.com/AdamKowalczuk/netflix-clone">
-              <ProjectButton whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
-                <GithubIcon />
-                Go to github
-                <div></div>
-              </ProjectButton>
-            </a>
-          </ProjectSummary>
-        </Project>
-        <Project reverse={true}>
-          <ProjectSummary
-            ref={ref8}
-            style={{
-              transform: isInView8 ? "none" : "translateX(200px)",
-              opacity: isInView8 ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-            }}
-            className="last-project last-project-text"
-          >
-            <ProjectTitle>Nerd Shop</ProjectTitle>
-            <ProjectDescription>
-              E-commerce website which offers a diverse range of products and utilizes PayPal for secure and convenient online payments.
-            </ProjectDescription>
-            <ProjectTechnologies>
-              <ProjectLine>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>React</p>
-                </ProjectTech>
-              </ProjectLine>
-              <ProjectLine>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>PayPal sandbox</p>
-                </ProjectTech>
-              </ProjectLine>
-              <ProjectLine style={{ borderBottom: 0 }}>
-                <ProjectTech>
-                  <Checkbox>
-                    <Check />
-                  </Checkbox>
-                  <p>React router</p>
-                </ProjectTech>
-              </ProjectLine>
-            </ProjectTechnologies>
-            <a target="_blank" rel="noreferrer" href="https://github.com/AdamKowalczuk/e-commerce-react">
-              <ProjectButton whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
-                <GithubIcon />
-                Go to github
-                <div></div>
-              </ProjectButton>
-            </a>
-          </ProjectSummary>
-          <ProjectImage
-            ref={ref9}
-            style={{
-              transform: isInView9 ? "none" : "translateX(200px)",
-              opacity: isInView9 ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-            }}
-            className="last-project"
-            image={Project4Image}
-          ></ProjectImage>
-        </Project>
+            {!project.reverse && (
+              <ProjectImage image={project.image} aria-label={project.alt} />
+            )}
+            <ProjectSummaryWrapper>
+              <ProjectSummary>
+                <ProjectTitle>{project.title}</ProjectTitle>
+                <ProjectDescription>{project.description}</ProjectDescription>
+                <ProjectTechnologies>
+                  {project.technologies.map(tech => (
+                    <TechPill key={tech}>{tech}</TechPill>
+                  ))}
+                </ProjectTechnologies>
+                <a target="_blank" rel="noreferrer" href={project.github}>
+                  <ProjectButton whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
+                    <GithubIcon />
+                    View on GitHub
+                    <div></div>
+                  </ProjectButton>
+                </a>
+              </ProjectSummary>
+            </ProjectSummaryWrapper>
+            {project.reverse && (
+              <ProjectImage image={project.image} aria-label={project.alt} />
+            )}
+          </Project>
+        ))}
       </ProjectsWrapper>
     </>
   );

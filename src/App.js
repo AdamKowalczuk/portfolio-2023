@@ -11,7 +11,11 @@ import styled from "styled-components";
 const StyledWrapper = styled.div`
   padding: 50px;
   margin-top: 70px;
-  @media only screen and (max-width: 600px) {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  @media only screen and (max-width: 1000px) {
+    max-width: 100%;
     padding: 20px;
   }
 `;

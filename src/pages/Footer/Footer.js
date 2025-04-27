@@ -8,58 +8,51 @@ import { motion } from "framer-motion";
 
 const StyledFooter = styled.footer`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 70px;
+  justify-content: center;
+  padding: 24px 0 12px 0;
   background-color: ${theme.colors.darkGray};
-  padding: 0 20px;
-  @media only screen and (max-width: 600px) {
-    flex-direction: column;
-    height: auto;
-  }
-`;
-
-const EmptyDiv = styled.div`
-  width: 33%;
 `;
 
 const SocialIcons = styled.div`
   display: flex;
-  gap: 15px;
-  width: 34%;
+  gap: 28px;
   justify-content: center;
-  svg {
-    cursor: pointer;
-  }
   align-items: center;
+  svg {
+    width: 32px;
+    height: 32px;
+    transition: fill 0.2s;
+    cursor: pointer;
+    fill: currentColor;
+    color: ${theme.colors.gray};
+  }
   svg:hover {
+    
     path {
       fill: ${theme.colors.purple};
       fill-opacity: 1;
     }
   }
   @media only screen and (max-width: 600px) {
+    gap: 18px;
     padding-top: 10px;
   }
 `;
 
 const Copyright = styled.p`
-  width: 33%;
-  text-align: right;
-  padding-right: 10px;
+  text-align: center;
   color: ${theme.colors.gray};
-  @media only screen and (max-width: 600px) {
-    width: 100%;
-    text-align: center;
-    padding-right: 0px;
-  }
+  font-size: 15px;
+  margin: 12px 0 0 0;
+  width: 100%;
 `;
 
 export default class Footer extends Component {
   render() {
     return (
       <StyledFooter>
-        <EmptyDiv></EmptyDiv>
         <SocialIcons>
           <motion.div whileHover={{ scale: 1.2 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
             <a href="https://www.linkedin.com/in/adamkowalczuk/" target="_blank" rel="noreferrer">
@@ -77,7 +70,9 @@ export default class Footer extends Component {
             </a>
           </motion.div>
         </SocialIcons>
-        <Copyright>&copy; Copyright Adam Kowalczuk</Copyright>
+        <Copyright>
+          © {new Date().getFullYear()} Adam Kowalczuk
+        </Copyright>
       </StyledFooter>
     );
   }

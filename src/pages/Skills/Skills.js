@@ -24,8 +24,9 @@ import StyledComponentIcon from '../../assets/skills-icons/styled-components-ico
 import ChakraUIIcon from '../../assets/skills-icons/chakra-ui-icon.png';
 import MaterialUIIcon from '../../assets/skills-icons/material-ui-icon.png';
 import PostmanIcon from '../../assets/skills-icons/postman-icon.svg';
-import CsharpIcon from '../../assets/skills-icons/csharp-icon.png';
 import ShadcnUIIcon from '../../assets/skills-icons/shadcn.png';
+import CursorUiIcon from '../../assets/skills-icons/cursor-icon.svg';
+import TanstackIcon from '../../assets/skills-icons/react-query-icon.svg';
 import { motion, useInView } from 'framer-motion';
 
 const SectionHeader = styled.div`
@@ -61,6 +62,20 @@ const Skill = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 8px;
+  .icon-bg {
+    background: rgba(81, 50, 192, 0.08);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.2s, background 0.2s;
+  }
+  &:hover .icon-bg {
+    background: rgba(81, 50, 192, 0.18);
+    box-shadow: 0 4px 16px 0 rgba(81, 50, 192, 0.12);
+  }
   img {
     width: 60px;
     height: 60px;
@@ -69,14 +84,18 @@ const Skill = styled(motion.div)`
     color: ${theme.colors.white};
     font-size: 20px;
     font-weight: 600;
+    margin: 0;
   }
   @media only screen and (max-width: 600px) {
-    p {
-      font-size: 12px;
+    .icon-bg {
+      padding: 8px;
     }
     img {
       width: 32px;
       height: 32px;
+    }
+    p {
+      font-size: 12px;
     }
   }
 `;
@@ -113,6 +132,11 @@ let skills = [
         name: 'Next.js',
         img: NextIcon,
       },
+      {
+        name: 'TanStack Query',
+        img: TanstackIcon,
+      },
+      
     ],
   },
   {
@@ -188,6 +212,10 @@ let skills = [
         name: 'Postman',
         img: PostmanIcon,
       },
+      {
+        name: 'Cursor AI',
+        img: CursorUiIcon,
+      },
     ],
   },
   {
@@ -242,16 +270,18 @@ export default function Skills() {
                 {skill.items.map((item, id) => {
                   return (
                     <Skill key={id}>
-                      <motion.img
-                        src={item.img}
-                        alt={item.name}
-                        whileHover={{ scale: 1.2 }}
-                        transition={{
-                          type: 'spring',
-                          stiffness: 400,
-                          damping: 10,
-                        }}
-                      />
+                      <div className="icon-bg">
+                        <motion.img
+                          src={item.img}
+                          alt={item.name}
+                          whileHover={{ scale: 1.2 }}
+                          transition={{
+                            type: 'spring',
+                            stiffness: 400,
+                            damping: 10,
+                          }}
+                        />
+                      </div>
                       <p>{item.name} </p>
                     </Skill>
                   );

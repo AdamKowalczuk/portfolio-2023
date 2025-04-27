@@ -36,9 +36,18 @@ const AboutWelcome = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 12px;
+  h1 {
+    margin-bottom: 0;
+  }
   @media only screen and (max-width: 600px) {
+    max-width: 100%;
     text-align: center;
     align-items: center;
+    gap: 18px;
+    h1 {
+      font-size: 32px;
+    }
   }
 `;
 
@@ -50,6 +59,7 @@ const AboutDescription = styled.div`
   padding: 50px;
   margin-top: 100px;
   margin-bottom: 50px;
+  
   h3 {
     margin-top: 0;
   }
@@ -78,7 +88,7 @@ const AboutAvatar = styled.div`
   img {
     width: 100%;
     background-size: contain;
-    height: 500px;
+    height: 400px;
     border-radius: 8px;
     margin-left: -50px;
   }
@@ -89,6 +99,110 @@ const AboutAvatar = styled.div`
     }
   }
 `;
+
+const Badge = styled.div`
+  background: #2d1856;
+  color: #e0d7ff;
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  
+`;
+
+const Highlight = styled.span`
+  color: ${theme.colors.purple};
+`;
+
+const ButtonRow = styled.div`
+  display: flex;
+  gap: 14px;
+  margin-top: 0;
+  @media only screen and (max-width: 600px) {
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+`;
+
+const PrimaryButton = styled.a`
+  background: ${theme.colors.purple};
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background 0.2s;
+  box-shadow: 0 2px 16px 0 rgba(81,50,192,0.15);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: ${theme.colors.purple};
+  &:hover {
+    background: ${theme.colors.white};
+    color: ${theme.colors.purple};
+  }
+  @media only screen and (max-width: 600px) {
+    flex: 1;
+    min-width: 0;
+    justify-content: center;
+  }
+`;
+
+const SecondaryButton = styled.a`
+  background: ${theme.colors.darkGray};
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  border: 1px solid #333;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  &:hover {
+    background: ${theme.colors.gray};
+    color: ${theme.colors.darkGray};
+  }
+  @media only screen and (max-width: 600px) {
+    flex: 1;
+    min-width: 0;
+    justify-content: center;
+  }
+`;
+
+const AboutDescriptionShort = styled.p`
+  color: ${theme.colors.gray};
+  font-size: 22px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: left;
+  @media only screen and (max-width: 600px) {
+    font-size: 15px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+`;
+
+const scrollIntoView = (item) => {
+  let element = document.getElementById(item);
+  const yOffset = -90;
+  const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+  window.scrollTo({ top: y, behavior: "smooth" });
+};
 
 export default function About() {
   const ref1 = useRef(null);
@@ -107,8 +221,15 @@ export default function About() {
               transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
             }}
           >
-            <h4>Welcome to my portfolio!</h4>
-            <h1>I’m Adam, a React Frontend Developer</h1>
+            <Badge>Frontend Developer</Badge>
+            <h1>Hi, I am <Highlight>Adam</Highlight></h1>
+            <AboutDescriptionShort>
+              I create modern, intuitive and responsive web interfaces using React and Next.js.
+            </AboutDescriptionShort>
+            <ButtonRow>
+              <PrimaryButton as="button" onClick={() => scrollIntoView("projects")}>See projects</PrimaryButton>
+              <SecondaryButton href="/CV.pdf" target="_blank" rel="noopener noreferrer">Download CV</SecondaryButton>
+            </ButtonRow>
           </AboutWelcome>
         </AboutBox>
 
@@ -135,19 +256,9 @@ export default function About() {
       >
         <h3>Something about me</h3>
         <p>
-          As a <b>frontend developer</b> specializing in <b>React</b> and{' '}
-          <b>Next.js</b>, I focus on building visually appealing and highly
-          interactive <b>user interfaces</b> for web applications. My{' '}
-          <b>passion for coding</b> goes hand in hand with my attention to
-          detail, ensuring every project is <b>responsive</b> and{' '}
-          <b>user-friendly</b>. Outside of development, I enjoy <b>running</b>,{' '}
-          <b>reading</b>, and exploring new <b>board games</b>. My{' '}
-          <b>portfolio</b> highlights my expertise in <b>React</b>, showcasing
-          projects that prioritize seamless design and intuitive{' '}
-          <b>user experiences</b>. When I'm not <b>coding</b>, you can find me
-          on a morning jog, immersed in a great book, or strategizing over a
-          board game. Feel free to explore my <b>portfolio</b> and{' '}
-          <b>get in touch</b> if you'd like to know more.
+          I am a passionate <b>frontend developer</b> with 3 years of experience, specializing in <b>React</b> and <b>Next.js</b>. I create modern, intuitive and fully responsive <b>web interfaces</b> that focus on user experience and aesthetics. I pay great attention to detail and always strive for clean, maintainable code.<br /><br />
+          Outside of programming, I enjoy <b>running</b>, <b>reading</b> and discovering new <b>board games</b>.<br /><br />
+          Feel free to check out my <b>portfolio</b> and contact me if you want to collaborate or just say hi!
         </p>
       </AboutDescription>
     </>
