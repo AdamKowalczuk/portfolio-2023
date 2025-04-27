@@ -23,7 +23,7 @@ const NavContent = styled.div`
   height: 70px;
   padding: 0 50px;
   @media only screen and (max-width: 600px) {
-    padding: 0 10px;
+    padding: 0 24px;
   }
 `;
 
