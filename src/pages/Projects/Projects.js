@@ -34,7 +34,7 @@ const projectsData = [
     title: 'WebFront',
     image: Project1Image,
     alt: 'WebFront project screenshot',
-    description: 'This application utilizes MERN stack and JSON Web Token to provide an interactive platform for learning HTML, CSS, and JavaScript.',
+    description: 'Interactive learning platform built with MERN stack, featuring JWT authentication and comprehensive HTML, CSS, and JavaScript tutorials.',
     github: 'https://github.com/AdamKowalczuk/praca-inzynierska-client',
     technologies: [
       'React', 'MongoDB', 'Redux', 'Node.js', 'PWA', 'Express.js'
@@ -44,7 +44,7 @@ const projectsData = [
     title: 'Plan Harmony',
     image: Project2Image,
     alt: 'Plan Harmony project screenshot',
-    description: 'An application to create a daily planner, organize tasks and goals, and save notes. An application that allows you to view and analyze your activity.',
+    description: 'Modern task management application with activity tracking and analytics, built with React and enhanced by smooth animations.',
     github: 'https://github.com/AdamKowalczuk/plan-harmony',
     technologies: [
       'React', 'Framer motion', 'Redux'
@@ -55,7 +55,7 @@ const projectsData = [
     title: 'Netflix clone',
     image: Project3Image,
     alt: 'Netflix clone project screenshot',
-    description: 'A TypeScript, Next.js, and Prisma-powered Netflix clone project that emulates the renowned streaming platform\'s design and features.',
+    description: 'Full-stack Netflix clone featuring authentication, video streaming, and responsive design, built with Next.js and TypeScript.',
     github: 'https://github.com/AdamKowalczuk/netflix-clone',
     technologies: [
       'React', 'TypeScript', 'Tailwind CSS', 'Next.js', 'Prisma', 'MongoDB'
@@ -65,7 +65,7 @@ const projectsData = [
     title: 'Nerd Shop',
     image: Project4Image,
     alt: 'Nerd Shop project screenshot',
-    description: 'E-commerce website which offers a diverse range of products and utilizes PayPal for secure and convenient online payments.',
+    description: 'E-commerce platform with PayPal integration, featuring product catalog, cart management, and secure checkout process.',
     github: 'https://github.com/AdamKowalczuk/e-commerce-react',
     technologies: [
       'React', 'PayPal sandbox', 'React router'
@@ -142,7 +142,7 @@ const ProjectDescription = styled.p`
   font-size: 24px;
   color: ${theme.colors.white};
   @media only screen and (max-width: 600px) {
-    font-size: 12px;
+    font-size: 16px;
   }
 `;
 
@@ -165,22 +165,7 @@ const TechPill = styled.span`
   transition: background 0.2s, color 0.2s;
 `;
 
-const Checkbox = styled.div`
-  width: 36px;
-  height: 36px;
-  border-radius: 100px;
-  background: rgb(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @media only screen and (max-width: 600px) {
-    width: 18px;
-    height: 18px;
-    svg {
-      width: 12px;
-    }
-  }
-`;
+
 
 const ProjectButton = styled(motion.div)`
   background: ${theme.colors.purple};
