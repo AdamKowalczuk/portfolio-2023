@@ -1,0 +1,56 @@
+{
+  "Hero": {
+    "title": "Adam Kowalczuk",
+    "subtitle": "React Frontend Developer",
+    "description": "I create modern web applications using React, Next.js and TypeScript. I specialize in building responsive and accessible user interfaces.",
+    "downloadCv": "Download CV"
+  },
+  "About": {
+    "title": "Something about me",
+    "description": "I am a passionate frontend developer with 3 years of experience, specializing in React and Next.js. I create modern, intuitive and fully responsive web interfaces that focus on user experience and aesthetics. I pay great attention to detail and always strive for clean, maintainable code.",
+    "interests": "Outside of programming, I enjoy:",
+    "interestsList": {
+      "tech": "New technologies and trends in web development",
+      "design": "UI/UX Design",
+      "photo": "Photography",
+      "travel": "Traveling"
+    },
+    "contact": "Feel free to check out my portfolio and contact me if you want to collaborate or just say hi!"
+  },
+  "Skills": {
+    "title": "Skills",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools"
+    }
+  },
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects"
+  },
+  "Footer": {
+    "copyright": "© {year} Adam Kowalczuk. All rights reserved."
+  },
+  "LanguageSwitcher": {
+    "switchToPolish": "Switch to Polish",
+    "switchToEnglish": "Switch to English"
+  },
+  "Projects": {
+    "title": "Projects",
+    "liveDemo": "Live Demo",
+    "projects": {
+      "portfolio": {
+        "description": "Modern portfolio built with Next.js 13, TypeScript, and TailwindCSS. Features animations, dark mode, and full responsiveness."
+      },
+      "ecommerce": {
+        "description": "E-commerce application with shopping cart, product filtering, and authentication system. Built with React and Redux Toolkit."
+      },
+      "weather": {
+        "description": "Weather application using OpenWeather API. Allows checking current weather and forecasts for selected cities."
+      }
+    }
+  }
+}

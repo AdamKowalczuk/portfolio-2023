@@ -1,0 +1,56 @@
+{
+  "Hero": {
+    "title": "Adam Kowalczuk",
+    "subtitle": "React Frontend Developer",
+    "description": "Tworzę nowoczesne aplikacje webowe z wykorzystaniem React, Next.js i TypeScript. Specjalizuję się w budowaniu responsywnych i dostępnych interfejsów użytkownika.",
+    "downloadCv": "Pobierz CV"
+  },
+  "About": {
+    "title": "O mnie",
+    "description": "Jestem Frontend Developerem z pasją do tworzenia nowoczesnych i dostępnych aplikacji webowych. Moja przygoda z programowaniem rozpoczęła się kilka lat temu, a obecnie specjalizuję się w technologiach React i Next.js.",
+    "interests": "Poza programowaniem interesuję się:",
+    "interestsList": {
+      "tech": "Nowymi technologiami i trendami w web development",
+      "design": "UI/UX Design",
+      "photo": "Fotografią",
+      "travel": "Podróżami"
+    },
+    "contact": "Jestem otwarty na nowe wyzwania i projekty. Jeśli masz pomysł na współpracę lub chcesz porozmawiać o technologiach, zapraszam do kontaktu!"
+  },
+  "Skills": {
+    "title": "Umiejętności",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Narzędzia"
+    }
+  },
+  "Navigation": {
+    "home": "Strona główna",
+    "about": "O mnie",
+    "skills": "Umiejętności",
+    "projects": "Projekty"
+  },
+  "Footer": {
+    "copyright": "© {year} Adam Kowalczuk. Wszelkie prawa zastrzeżone."
+  },
+  "LanguageSwitcher": {
+    "switchToPolish": "Przełącz na język polski",
+    "switchToEnglish": "Przełącz na język angielski"
+  },
+  "Projects": {
+    "title": "Projekty",
+    "liveDemo": "Demo",
+    "projects": {
+      "portfolio": {
+        "description": "Nowoczesne portfolio stworzone z wykorzystaniem Next.js 13, TypeScript i TailwindCSS. Zawiera animacje, ciemny motyw i pełną responsywność."
+      },
+      "ecommerce": {
+        "description": "Aplikacja e-commerce z koszykiem zakupowym, filtrowaniem produktów i systemem autentykacji. Zbudowana w React z wykorzystaniem Redux Toolkit."
+      },
+      "weather": {
+        "description": "Aplikacja pogodowa wykorzystująca OpenWeather API. Pozwala na sprawdzanie aktualnej pogody i prognozy dla wybranych miast."
+      }
+    }
+  }
+}
