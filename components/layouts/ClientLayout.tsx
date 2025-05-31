@@ -1,6 +1,7 @@
 "use client";
 
 import { NextIntlClientProvider } from "next-intl";
+import { ThemeProvider } from "next-themes";
 import { Navigation } from "@/components/shared/navigation/Navigation";
 import { Footer } from "@/components/shared/footer/Footer";
 import { useEffect, useState } from "react";
@@ -16,18 +17,17 @@ async function getMessages(locale: string) {
 export function ClientLayout({ children }: { children: React.ReactNode }) {
   const [locale, setLocale] = useState("pl");
   const [messages, setMessages] = useState<any>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Pobierz zapisany język z localStorage lub użyj domyślnego
     const savedLocale = localStorage.getItem("preferredLocale") || "pl";
     setLocale(savedLocale);
 
-    // Załaduj tłumaczenia dla wybranego języka
     getMessages(savedLocale).then((msgs) => {
       setMessages(msgs);
+      setMounted(true);
     });
 
-    // Nasłuchuj na zmiany w localStorage
     const handleStorageChange = (e: StorageEvent) => {
       if (e.key === "preferredLocale" && e.newValue) {
         setLocale(e.newValue);
@@ -41,17 +41,23 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
     return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
-  if (!messages) {
-    return null; // lub komponent ładowania
+  if (!mounted || !messages) {
+    return null;
   }
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <div lang={locale}>
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
-      </div>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <div className="relative flex min-h-screen flex-col">
+          <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur">
+            <div className="container flex h-16 items-center justify-between">
+              <Navigation />
+            </div>
+          </header>
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
+      </ThemeProvider>
     </NextIntlClientProvider>
   );
 }
