@@ -1,13 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 import { GithubIcon, LinkedinIcon, FileText } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { LucideIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+type SocialLink = {
+  href: string;
+  label: string;
+  icon: LucideIcon;
+  openInNewTab?: boolean;
+};
 
 const currentYear = new Date().getFullYear();
 
-const socialLinks = [
+const socialLinks: SocialLink[] = [
   {
     href: "https://github.com/AdamKowalczuk",
     label: "GitHub",
@@ -22,37 +30,52 @@ const socialLinks = [
     href: "/cv.pdf",
     label: "CV",
     icon: FileText,
+    openInNewTab: true,
   },
-] as const;
+];
 
 export const Footer = () => {
   const t = useTranslations("Footer");
 
   return (
-    <footer className="bg-background w-full border-t">
-      <div className="container mx-auto px-4 py-6">
-        <div className="flex flex-col items-center justify-center space-y-4">
+    <footer className="bg-background/95 supports-[backdrop-filter]:bg-background/60 w-full border-t backdrop-blur">
+      <div className="w-full px-4 py-6 sm:px-6 sm:py-8">
+        <div className="mx-auto flex flex-col-reverse items-center gap-4 sm:gap-6 md:flex-row md:items-center md:justify-between">
+          {/* Copyright */}
+          <p className="text-muted-foreground/80 text-center text-sm sm:text-left">
+            {t("copyright", { year: currentYear })}
+          </p>
+
           {/* Social Links */}
-          <div className="flex items-center space-x-4">
+          <div className="flex w-full items-center justify-center gap-4 sm:w-auto sm:gap-3">
             {socialLinks.map((link) => {
               const Icon = link.icon;
               return (
-                <Link
+                <Button
                   key={link.href}
-                  href={link.href}
-                  target={link.href.startsWith("http") ? "_blank" : undefined}
-                  rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  variant="outline"
+                  size="icon"
+                  asChild
+                  className="border-border/40 hover:border-border hover:bg-accent/50 transition-all duration-300"
                   aria-label={link.label}
                 >
-                  <Icon className="h-5 w-5" />
-                </Link>
+                  <Link
+                    href={link.href}
+                    target={
+                      link.href.startsWith("http") || link.openInNewTab ? "_blank" : undefined
+                    }
+                    rel={
+                      link.href.startsWith("http") || link.openInNewTab
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                  >
+                    <Icon className="h-5 w-5 transition-transform duration-300 hover:scale-110" />
+                  </Link>
+                </Button>
               );
             })}
           </div>
-
-          {/* Copyright */}
-          <p className="text-muted-foreground text-sm">{t("copyright", { year: currentYear })}</p>
         </div>
       </div>
     </footer>

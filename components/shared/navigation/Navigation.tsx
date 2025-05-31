@@ -6,17 +6,20 @@ import { useTranslations } from "next-intl";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LanguageSwitcher } from "@/components/shared/language-switcher/LanguageSwitcher";
+import { ThemeSwitcher } from "@/components/shared/theme-switcher/ThemeSwitcher";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 const navigationLinks = [
-  { href: "#hero", label: "Navigation.home" },
-  { href: "#about", label: "Navigation.about" },
-  { href: "#skills", label: "Navigation.skills" },
-  { href: "#projects", label: "Navigation.projects" },
+  { href: "#hero", label: "home" },
+  { href: "#about", label: "about" },
+  { href: "#skills", label: "skills" },
+  { href: "#projects", label: "projects" },
 ] as const;
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const t = useTranslations();
+  const t = useTranslations("Navigation");
 
   const handleToggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -33,12 +36,17 @@ export const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link
-            href="#hero"
-            className="text-foreground text-xl font-bold"
-            aria-label={t("Navigation.home")}
-          >
-            AK
+          <Link href="#hero" className="flex items-center" aria-label={t("home")} tabIndex={0}>
+            <Image
+              src="/assets/images/AK.svg"
+              alt="Logo"
+              width={61}
+              height={28}
+              className="h-8 w-auto"
+              aria-label="Logo"
+              tabIndex={0}
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -53,13 +61,17 @@ export const Navigation = () => {
                 {t(link.label)}
               </Link>
             ))}
-            <LanguageSwitcher />
+            <div className="flex items-center gap-2">
+              <ThemeSwitcher />
+              <LanguageSwitcher />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            type="button"
-            className="text-muted-foreground hover:text-foreground md:hidden"
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
             onClick={handleToggleMenu}
             onKeyDown={handleKeyDown}
             aria-label={isMenuOpen ? "Zamknij menu" : "Otwórz menu"}
@@ -67,7 +79,7 @@ export const Navigation = () => {
             aria-controls="mobile-menu"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          </Button>
         </div>
 
         {/* Mobile Menu */}
@@ -88,6 +100,7 @@ export const Navigation = () => {
               </Link>
             ))}
             <div className="px-3 py-2">
+              <ThemeSwitcher />
               <LanguageSwitcher />
             </div>
           </div>
