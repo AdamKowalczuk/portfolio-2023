@@ -6,7 +6,8 @@
     "downloadCv": "Download CV"
   },
   "About": {
-    "title": "Something about me",
+    "subtitle": "A few words about me.",
+    "title": "Who Am I?",
     "description": "I am a passionate frontend developer with 3 years of experience, specializing in React and Next.js. I create modern, intuitive and fully responsive web interfaces that focus on user experience and aesthetics. I pay great attention to detail and always strive for clean, maintainable code.",
     "interests": "Outside of programming, I enjoy:",
     "interestsList": {
@@ -18,7 +19,8 @@
     "contact": "Feel free to check out my portfolio and contact me if you want to collaborate or just say hi!"
   },
   "Skills": {
-    "title": "Skills",
+    "subtitle": "Technologies I know.",
+    "title": "My Skills",
     "categories": {
       "frontend": "Frontend",
       "backend": "Backend",
@@ -32,14 +34,20 @@
     "projects": "Projects"
   },
   "Footer": {
-    "copyright": "© {year} Adam Kowalczuk. All rights reserved."
+    "copyright": "© {year} Adam Kowalczuk. All rights reserved.",
+    "socialLinks": {
+      "github": "GitHub Profile",
+      "linkedin": "LinkedIn Profile",
+      "cv": "Download CV"
+    }
   },
   "LanguageSwitcher": {
     "switchToPolish": "Switch to Polish",
     "switchToEnglish": "Switch to English"
   },
   "Projects": {
-    "title": "Projects",
+    "subtitle": "Now, the good stuff.",
+    "title": "My Work",
     "liveDemo": "Live Demo",
     "projects": {
       "portfolio": {
@@ -52,5 +60,9 @@
         "description": "Weather application using OpenWeather API. Allows checking current weather and forecasts for selected cities."
       }
     }
+  },
+  "ThemeSwitcher": {
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme"
   }
 }

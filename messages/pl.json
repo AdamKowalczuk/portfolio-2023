@@ -6,7 +6,8 @@
     "downloadCv": "Pobierz CV"
   },
   "About": {
-    "title": "O mnie",
+    "subtitle": "Kilka słów o mnie.",
+    "title": "Kim Jestem?",
     "description": "Jestem Frontend Developerem z pasją do tworzenia nowoczesnych i dostępnych aplikacji webowych. Moja przygoda z programowaniem rozpoczęła się kilka lat temu, a obecnie specjalizuję się w technologiach React i Next.js.",
     "interests": "Poza programowaniem interesuję się:",
     "interestsList": {
@@ -18,7 +19,8 @@
     "contact": "Jestem otwarty na nowe wyzwania i projekty. Jeśli masz pomysł na współpracę lub chcesz porozmawiać o technologiach, zapraszam do kontaktu!"
   },
   "Skills": {
-    "title": "Umiejętności",
+    "subtitle": "Technologie, które znam.",
+    "title": "Moje Umiejętności",
     "categories": {
       "frontend": "Frontend",
       "backend": "Backend",
@@ -32,14 +34,20 @@
     "projects": "Projekty"
   },
   "Footer": {
-    "copyright": "© {year} Adam Kowalczuk. Wszelkie prawa zastrzeżone."
+    "copyright": "© {year} Adam Kowalczuk. Wszelkie prawa zastrzeżone.",
+    "socialLinks": {
+      "github": "Profil na GitHub",
+      "linkedin": "Profil na LinkedIn",
+      "cv": "Pobierz CV"
+    }
   },
   "LanguageSwitcher": {
     "switchToPolish": "Przełącz na język polski",
     "switchToEnglish": "Przełącz na język angielski"
   },
   "Projects": {
-    "title": "Projekty",
+    "subtitle": "Teraz to, co najlepsze.",
+    "title": "Moje Projekty",
     "liveDemo": "Demo",
     "projects": {
       "portfolio": {
@@ -52,5 +60,9 @@
         "description": "Aplikacja pogodowa wykorzystująca OpenWeather API. Pozwala na sprawdzanie aktualnej pogody i prognozy dla wybranych miast."
       }
     }
+  },
+  "ThemeSwitcher": {
+    "switchToLight": "Przełącz na jasny motyw",
+    "switchToDark": "Przełącz na ciemny motyw"
   }
 }
