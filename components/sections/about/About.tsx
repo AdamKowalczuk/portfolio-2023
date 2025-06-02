@@ -4,7 +4,12 @@ import { useRef } from "react";
 import { motion, useInView, easeInOut } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-const aboutDesc = `I am a passionate <b>frontend developer</b> with 3 years of experience, specializing in <b>React</b> and <b>Next.js</b>. I create modern, intuitive and fully responsive <b>web interfaces</b> that focus on user experience and aesthetics. I pay great attention to detail and always strive for clean, maintainable code.<br /><br />Outside of programming, I enjoy <b>running</b>, <b>reading</b> and discovering new <b>board games</b>.<br /><br />Feel free to check out my <b>portfolio</b> and contact me if you want to collaborate or just say hi!`;
+const formatDescription = (text: string) => `
+<div class="space-y-8">
+  <p class="text-lg text-[#e0d7ff] leading-relaxed">
+    ${text}
+  </p>
+</div>`;
 
 const sectionVariants = {
   hidden: { opacity: 0, x: -200 },
@@ -23,6 +28,13 @@ export const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const t = useTranslations("About");
+
+  const description = t
+    .raw("description")
+    .replace(
+      /<b>(.*?)<\/b>/g,
+      '<b class="text-primary font-semibold bg-white px-2 py-0.5 rounded-md inline-block mx-0.5 shadow-md">$1</b>'
+    );
 
   return (
     <section id="about" className="py-20">
@@ -48,7 +60,7 @@ export const About = () => {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent" />
           </div>
           <div className="relative px-8 py-12">
-            <p className="text-lg text-[#e0d7ff]" dangerouslySetInnerHTML={{ __html: aboutDesc }} />
+            <div dangerouslySetInnerHTML={{ __html: formatDescription(description) }} />
           </div>
         </motion.div>
       </div>

@@ -33,19 +33,21 @@ export const LanguageSwitcher = () => {
     <div className="flex items-center gap-2">
       <Button
         variant={currentLocale === "pl" ? "default" : "outline"}
-        size="sm"
+        size="icon"
         onClick={() => handleLanguageChange("pl")}
         aria-label={t("switchToPolish")}
+        className="h-9 w-9"
       >
-        PL
+        <span className="text-sm font-medium">PL</span>
       </Button>
       <Button
         variant={currentLocale === "en" ? "default" : "outline"}
-        size="sm"
+        size="icon"
         onClick={() => handleLanguageChange("en")}
         aria-label={t("switchToEnglish")}
+        className="h-9 w-9"
       >
-        EN
+        <span className="text-sm font-medium">EN</span>
       </Button>
     </div>
   );

@@ -39,15 +39,15 @@ export const Footer = () => {
 
   return (
     <footer className="bg-background/95 supports-[backdrop-filter]:bg-background/60 w-full border-t backdrop-blur">
-      <div className="w-full px-4 py-6 sm:px-6 sm:py-8">
-        <div className="mx-auto flex flex-col-reverse items-center gap-4 sm:gap-6 md:flex-row md:items-center md:justify-between">
+      <div className="container mx-auto px-4 py-6 md:px-6 md:py-8 lg:px-8">
+        <div className="flex flex-col-reverse items-center gap-4 sm:gap-6 md:flex-row md:items-center md:justify-between">
           {/* Copyright */}
           <p className="text-muted-foreground/80 text-center text-sm sm:text-left">
             {t("copyright", { year: currentYear })}
           </p>
 
           {/* Social Links */}
-          <div className="flex w-full items-center justify-center gap-4 sm:w-auto sm:gap-3">
+          <div className="flex items-center gap-2">
             {socialLinks.map((link) => {
               const Icon = link.icon;
               return (

@@ -6,7 +6,7 @@ import { Projects } from "@/components/sections/projects/Projects";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      <div className="mx-auto w-full px-4 md:px-20">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <Hero />
         <About />
         <Skills />

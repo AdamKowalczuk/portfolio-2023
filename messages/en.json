@@ -1,22 +1,17 @@
 {
   "Hero": {
-    "title": "Adam Kowalczuk",
+    "title": "Adam",
     "subtitle": "React Frontend Developer",
     "description": "I create modern web applications using React, Next.js and TypeScript. I specialize in building responsive and accessible user interfaces.",
-    "downloadCv": "Download CV"
+    "downloadCv": "Download CV",
+    "greeting": "Hi, I am",
+    "seeProjects": "See projects",
+    "badge": "Frontend Developer"
   },
   "About": {
     "subtitle": "A few words about me.",
     "title": "Who Am I?",
-    "description": "I am a passionate frontend developer with 3 years of experience, specializing in React and Next.js. I create modern, intuitive and fully responsive web interfaces that focus on user experience and aesthetics. I pay great attention to detail and always strive for clean, maintainable code.",
-    "interests": "Outside of programming, I enjoy:",
-    "interestsList": {
-      "tech": "New technologies and trends in web development",
-      "design": "UI/UX Design",
-      "photo": "Photography",
-      "travel": "Traveling"
-    },
-    "contact": "Feel free to check out my portfolio and contact me if you want to collaborate or just say hi!"
+    "description": "I am a passionate <b>frontend developer</b> with 3 years of experience, specializing in <b>React</b> and <b>Next.js</b>. I create modern, intuitive and fully responsive <b>web interfaces</b> that focus on user experience and aesthetics. I pay great attention to detail and always strive for clean, maintainable code.<br /><br />Outside of programming, I enjoy <b>running</b>, <b>reading</b> and discovering new <b>board games</b>.<br /><br />Feel free to check out my <b>portfolio</b> and contact me if you want to collaborate or just say hi!"
   },
   "Skills": {
     "subtitle": "Technologies I know.",
@@ -31,7 +26,9 @@
     "home": "Home",
     "about": "About",
     "skills": "Skills",
-    "projects": "Projects"
+    "projects": "Projects",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "Footer": {
     "copyright": "© {year} Adam Kowalczuk. All rights reserved.",
