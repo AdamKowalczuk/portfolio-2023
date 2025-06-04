@@ -37,17 +37,24 @@ export const About = () => {
     );
 
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="py-16 md:py-24" aria-labelledby="about-title">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={sectionVariants}
-          className="mb-16"
+          className="mb-12 md:mb-16"
         >
-          <h4 className="text-primary mb-2 text-center text-lg font-medium">{t("subtitle")}</h4>
-          <h2 className="text-foreground text-center text-4xl font-bold">{t("title")}</h2>
+          <h4 className="text-primary mb-3 text-center text-lg font-medium" id="about-subtitle">
+            {t("subtitle")}
+          </h4>
+          <h2
+            className="text-foreground text-center text-3xl font-bold md:text-4xl lg:text-5xl"
+            id="about-title"
+          >
+            {t("title")}
+          </h2>
         </motion.div>
 
         <motion.div
@@ -56,11 +63,15 @@ export const About = () => {
           variants={sectionVariants}
           className="relative w-full"
         >
-          <div className="from-primary/90 via-primary/80 to-primary/60 absolute inset-0 rounded-[2rem] bg-gradient-to-br">
+          <div className="from-primary/90 via-primary/80 to-primary/60 absolute inset-0 rounded-2xl bg-gradient-to-br md:rounded-[2rem]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent" />
           </div>
-          <div className="relative px-8 py-12">
-            <div dangerouslySetInnerHTML={{ __html: formatDescription(description) }} />
+          <div className="relative px-4 py-8 md:px-8 md:py-12">
+            <div
+              className="prose prose-invert max-w-none"
+              dangerouslySetInnerHTML={{ __html: formatDescription(description) }}
+              aria-labelledby="about-subtitle"
+            />
           </div>
         </motion.div>
       </div>

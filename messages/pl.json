@@ -14,12 +14,14 @@
     "description": "Jestem pasjonującym się <b>frontend developerem</b> z 3-letnim doświadczeniem, specjalizującym się w <b>React</b> i <b>Next.js</b>. Tworzę nowoczesne, intuicyjne i w pełni responsywne <b>interfejsy webowe</b>, które skupiają się na doświadczeniu użytkownika i estetyce. Przywiązuję dużą wagę do szczegółów i zawsze dążę do czystego, łatwego w utrzymaniu kodu.<br /><br />Poza programowaniem, uwielbiam <b>bieganie</b>, <b>czytanie</b> i odkrywanie nowych <b>gier planszowych</b>.<br /><br />Zapraszam do zapoznania się z moim <b>portfolio</b> i kontaktu, jeśli chcesz współpracować lub po prostu się przywitać!"
   },
   "Skills": {
-    "subtitle": "Technologie, które znam.",
-    "title": "Moje Umiejętności",
+    "subtitle": "Moje umiejętności",
+    "title": "Umiejętności i Technologie",
     "categories": {
       "frontend": "Frontend",
+      "styling": "Styling",
       "backend": "Backend",
-      "tools": "Narzędzia"
+      "tools": "Narzędzia",
+      "testing": "Testowanie"
     }
   },
   "Navigation": {
@@ -45,6 +47,7 @@
   "Projects": {
     "subtitle": "Teraz to, co najlepsze.",
     "title": "Moje Projekty",
+    "viewOnGithub": "Zobacz na GitHub",
     "liveDemo": "Demo",
     "projects": {
       "portfolio": {

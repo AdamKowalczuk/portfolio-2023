@@ -105,7 +105,7 @@ export const Skills = () => {
   const t = useTranslations("Skills");
 
   return (
-    <section id="skills" className="bg-background py-20">
+    <section id="skills" className="bg-background py-20" aria-labelledby="skills-title">
       <style jsx global>{`
         /* Style dla ikon w trybie jasnym i ciemnym */
         .radix-icon,
@@ -133,8 +133,12 @@ export const Skills = () => {
           variants={sectionVariants}
           className="mb-16"
         >
-          <h4 className="text-primary mb-2 text-center text-lg font-medium">{t("subtitle")}</h4>
-          <h2 className="text-foreground text-center text-4xl font-bold">{t("title")}</h2>
+          <h4 className="text-primary mb-2 text-center text-lg font-medium" id="skills-subtitle">
+            {t("subtitle")}
+          </h4>
+          <h2 className="text-foreground text-center text-4xl font-bold" id="skills-title">
+            {t("title")}
+          </h2>
         </motion.div>
 
         <motion.div
@@ -142,13 +146,21 @@ export const Skills = () => {
           animate={isInView ? "visible" : "hidden"}
           variants={sectionVariants}
         >
-          <div className="flex flex-col space-y-12">
+          <div className="flex flex-col space-y-12" role="list" aria-label={t("title")}>
             {skills.map((category) => (
-              <div key={category.section} className="flex flex-col space-y-6">
-                <h3 className="text-foreground text-2xl font-semibold">{category.section}</h3>
-                <div className="flex flex-wrap gap-8">
+              <div key={category.section} className="flex flex-col space-y-6" role="listitem">
+                <h3
+                  className="text-foreground text-2xl font-semibold"
+                  id={`skills-${category.section.toLowerCase()}`}
+                >
+                  {t(`categories.${category.section.toLowerCase()}`)}
+                </h3>
+                <div
+                  className="flex flex-wrap gap-8"
+                  role="list"
+                  aria-labelledby={`skills-${category.section.toLowerCase()}`}
+                >
                   {category.items.map((item) => {
-                    // Określamy klasę dla konkretnej ikony
                     const getIconClass = (name: string) => {
                       switch (name) {
                         case "Radix UI":
@@ -171,20 +183,28 @@ export const Skills = () => {
                         variants={iconVariants}
                         whileHover="hover"
                         tabIndex={0}
-                        aria-label={item.name}
+                        role="listitem"
+                        aria-label={`${item.name} skill`}
                       >
-                        <div className="bg-primary/10 hover:bg-primary/20 dark:bg-primary/5 dark:hover:bg-primary/10 flex h-20 w-20 items-center justify-center rounded-xl p-4 transition-all duration-300 ease-in-out group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:group-hover:shadow-[0_8px_30px_rgb(255,255,255,0.12)]">
-                          <Image
-                            src={item.img}
-                            alt={item.name}
-                            width={48}
-                            height={48}
-                            className={`object-contain transition-transform duration-300 ease-in-out group-hover:scale-110 ${getIconClass(item.name)}`}
-                            aria-label={item.name}
-                            tabIndex={0}
-                          />
+                        <div
+                          className="bg-primary/15 hover:bg-primary/25 dark:bg-primary/15 dark:hover:bg-primary/25 flex h-20 w-20 items-center justify-center rounded-xl p-4 backdrop-blur-sm transition-all duration-300 ease-in-out group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:group-hover:shadow-[0_8px_30px_rgb(255,255,255,0.12)]"
+                          aria-hidden="true"
+                        >
+                          <div className="relative h-12 w-12">
+                            <Image
+                              src={item.img}
+                              alt=""
+                              fill
+                              sizes="48px"
+                              className={`object-contain transition-transform duration-300 ease-in-out group-hover:scale-110 ${getIconClass(item.name)}`}
+                              aria-hidden="true"
+                            />
+                          </div>
                         </div>
-                        <p className="text-foreground/80 group-hover:text-foreground mt-1 text-center text-sm font-medium transition-colors duration-300">
+                        <p
+                          className="text-foreground/80 group-hover:text-foreground mt-1 text-center text-sm font-medium transition-colors duration-300"
+                          aria-hidden="true"
+                        >
                           {item.name}
                         </p>
                       </motion.div>

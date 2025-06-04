@@ -14,12 +14,14 @@
     "description": "I am a passionate <b>frontend developer</b> with 3 years of experience, specializing in <b>React</b> and <b>Next.js</b>. I create modern, intuitive and fully responsive <b>web interfaces</b> that focus on user experience and aesthetics. I pay great attention to detail and always strive for clean, maintainable code.<br /><br />Outside of programming, I enjoy <b>running</b>, <b>reading</b> and discovering new <b>board games</b>.<br /><br />Feel free to check out my <b>portfolio</b> and contact me if you want to collaborate or just say hi!"
   },
   "Skills": {
-    "subtitle": "Technologies I know.",
-    "title": "My Skills",
+    "subtitle": "My expertise",
+    "title": "Skills & Technologies",
     "categories": {
       "frontend": "Frontend",
+      "styling": "Styling",
       "backend": "Backend",
-      "tools": "Tools"
+      "tools": "Tools",
+      "testing": "Testing"
     }
   },
   "Navigation": {
@@ -45,6 +47,7 @@
   "Projects": {
     "subtitle": "Now, the good stuff.",
     "title": "My Work",
+    "viewOnGithub": "View on GitHub",
     "liveDemo": "Live Demo",
     "projects": {
       "portfolio": {

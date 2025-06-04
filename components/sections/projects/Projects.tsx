@@ -5,6 +5,7 @@ import { motion, useInView, easeInOut } from "framer-motion";
 import Image from "next/image";
 import { GithubIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Button } from "@/components/ui/button";
 
 const projectsData = [
   {
@@ -71,17 +72,28 @@ export const Projects = () => {
   const t = useTranslations("Projects");
 
   return (
-    <section id="projects" className="bg-background py-20">
+    <section
+      id="projects"
+      className="bg-background py-16 md:py-24"
+      aria-labelledby="projects-title"
+    >
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={sectionVariants}
-          className="mb-16"
+          className="mb-12 md:mb-16"
         >
-          <h4 className="text-primary mb-2 text-center text-lg font-medium">{t("subtitle")}</h4>
-          <h2 className="text-foreground text-center text-4xl font-bold">{t("title")}</h2>
+          <h4 className="text-primary mb-3 text-center text-lg font-medium" id="projects-subtitle">
+            {t("subtitle")}
+          </h4>
+          <h2
+            className="text-foreground text-center text-3xl font-bold md:text-4xl lg:text-5xl"
+            id="projects-title"
+          >
+            {t("title")}
+          </h2>
         </motion.div>
 
         <motion.div
@@ -89,7 +101,7 @@ export const Projects = () => {
           animate={isInView ? "visible" : "hidden"}
           variants={sectionVariants}
         >
-          <div className="flex flex-col gap-16">
+          <div className="flex flex-col gap-16 md:gap-20">
             {projectsData.map((project, idx) => {
               const isReverse = project.reverse;
               return (
@@ -104,26 +116,45 @@ export const Projects = () => {
                 >
                   {/* Obraz projektu */}
                   <div className="flex w-full justify-center md:w-1/2">
-                    <Image
-                      src={project.image}
-                      alt={project.alt}
-                      width={550}
-                      height={550}
-                      className="rounded-xl object-cover"
-                      aria-label={project.alt}
-                      tabIndex={0}
-                      priority={idx === 0}
-                    />
+                    <div className="relative overflow-hidden rounded-xl">
+                      <Image
+                        src={project.image}
+                        alt={project.alt}
+                        width={550}
+                        height={550}
+                        className="rounded-xl object-cover"
+                        aria-label={project.alt}
+                        tabIndex={0}
+                        priority={idx === 0}
+                        loading={idx === 0 ? "eager" : "lazy"}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    </div>
                   </div>
                   {/* Opis projektu */}
-                  <div className="bg-card border-border flex w-full flex-col items-start rounded-xl border p-8 shadow-md md:w-1/2">
-                    <h3 className="text-foreground mb-4 text-2xl font-semibold">{project.title}</h3>
-                    <p className="text-muted-foreground mb-4 text-lg">{project.description}</p>
-                    <div className="mb-6 flex flex-wrap gap-2">
+                  <div className="bg-card/50 border-border/50 flex w-full flex-col items-start rounded-xl border p-6 shadow-lg md:w-1/2 md:p-8">
+                    <h3
+                      className="text-foreground mb-4 text-2xl font-semibold md:text-3xl"
+                      id={`project-${idx}-title`}
+                    >
+                      {project.title}
+                    </h3>
+                    <p
+                      className="text-muted-foreground mb-6 text-base leading-relaxed md:text-lg"
+                      aria-labelledby={`project-${idx}-title`}
+                    >
+                      {project.description}
+                    </p>
+                    <div
+                      className="mb-8 flex flex-wrap gap-2"
+                      role="list"
+                      aria-label={`Technologies used in ${project.title}`}
+                    >
                       {project.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="bg-primary/10 text-primary border-primary/20 inline-block rounded-lg border px-3 py-1 text-sm font-medium"
+                          className="bg-primary/5 text-primary border-primary/10 hover:bg-primary/10 inline-block rounded-lg border px-3 py-1.5 text-sm font-medium transition-colors duration-200"
+                          role="listitem"
                         >
                           {tech}
                         </span>
@@ -133,18 +164,16 @@ export const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`GitHub - ${project.title}`}
+                      aria-label={`View ${project.title} on GitHub`}
                       tabIndex={0}
                       className="w-full"
                     >
-                      <motion.button
-                        whileHover={{ scale: 1.07 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                        className="bg-primary text-primary-foreground hover:bg-primary/90 focus:ring-primary/50 flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold shadow transition-colors focus:ring-2 focus:outline-none"
-                      >
-                        <GithubIcon className="h-5 w-5" />
-                        <span>Zobacz na GitHub</span>
-                      </motion.button>
+                      <Button size="large" className="w-full gap-2" asChild>
+                        <div className="flex items-center justify-center">
+                          <GithubIcon className="h-5 w-5" aria-hidden="true" />
+                          <span>{t("viewOnGithub")}</span>
+                        </div>
+                      </Button>
                     </a>
                   </div>
                 </motion.div>
