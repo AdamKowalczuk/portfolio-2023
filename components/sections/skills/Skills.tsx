@@ -157,7 +157,7 @@ export const Skills = () => {
                   {t(`categories.${category.section.toLowerCase()}`)}
                 </h3>
                 <div
-                  className="flex flex-wrap gap-8"
+                  className="flex flex-wrap gap-4 md:gap-8"
                   role="list"
                   aria-labelledby={`skills-${category.section.toLowerCase()}`}
                 >

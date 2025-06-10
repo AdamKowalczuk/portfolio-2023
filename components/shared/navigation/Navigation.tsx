@@ -23,7 +23,6 @@ export const Navigation = () => {
   const [activeSection, setActiveSection] = useState<string>("hero");
   const t = useTranslations("Navigation");
 
-  // Obsługa scrollowania i aktywnej sekcji
   useEffect(() => {
     const handleScroll = () => {
       const sections = navigationLinks.map((link) => link.href.substring(1));
@@ -47,7 +46,7 @@ export const Navigation = () => {
 
   const handleToggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
-    // Blokuj scrollowanie gdy menu jest otwarte
+
     document.body.style.overflow = isMenuOpen ? "auto" : "hidden";
   };
 
@@ -59,11 +58,19 @@ export const Navigation = () => {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const element = document.querySelector(href);
+    const sectionId = href.substring(1);
+    const element = document.getElementById(sectionId);
+
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
       setIsMenuOpen(false);
       document.body.style.overflow = "auto";
+
+      const elementTop = element.offsetTop;
+
+      window.scrollTo({
+        top: elementTop,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -159,7 +166,6 @@ export const Navigation = () => {
                   <Link
                     key={link.href}
                     href={link.href}
-                    onClick={(e) => handleNavClick(e, link.href)}
                     className={cn(
                       "block px-3 py-2 text-base font-medium transition-colors",
                       "text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded-md",
@@ -167,6 +173,10 @@ export const Navigation = () => {
                     )}
                     aria-label={t(link.label)}
                     aria-current={activeSection === link.href.substring(1) ? "page" : undefined}
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      document.body.style.overflow = "auto";
+                    }}
                   >
                     {t(link.label)}
                   </Link>

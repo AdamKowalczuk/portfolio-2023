@@ -33,7 +33,7 @@ export const About = () => {
     .raw("description")
     .replace(
       /<b>(.*?)<\/b>/g,
-      '<b class="text-primary font-semibold bg-white px-2 py-0.5 rounded-md inline-block mx-0.5 shadow-md">$1</b>'
+      '<b class="text-primary font-semibold bg-white px-1 py rounded-sm inline-block mx-0.5 shadow-sm">$1</b>'
     );
 
   return (
