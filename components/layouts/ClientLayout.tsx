@@ -9,14 +9,14 @@ import { useEffect, useState } from "react";
 async function getMessages(locale: string) {
   try {
     return (await import(`../../messages/${locale}.json`)).default;
-  } catch (error) {
+  } catch {
     return (await import(`../../messages/pl.json`)).default;
   }
 }
 
 export function ClientLayout({ children }: { children: React.ReactNode }) {
   const [locale, setLocale] = useState("pl");
-  const [messages, setMessages] = useState<any>(null);
+  const [messages, setMessages] = useState<Record<string, unknown> | null>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
