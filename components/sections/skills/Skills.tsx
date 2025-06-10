@@ -40,6 +40,7 @@ const skills = [
     items: [
       { name: "Node.js", img: "/assets/skills-icons/nodejs-icon.svg" },
       { name: "MongoDB", img: "/assets/skills-icons/mongodb-icon.svg" },
+      { name: "Strapi", img: "/assets/skills-icons/strapi-icon.svg" },
       { name: "REST API", img: "/assets/skills-icons/rest-api-icon.svg" },
       { name: "WebSocket", img: "/assets/skills-icons/websocket-icon.svg" },
     ],
