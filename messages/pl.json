@@ -1,0 +1,68 @@
+{
+  "Hero": {
+    "title": "Adam",
+    "subtitle": "React Frontend Developer",
+    "description": "Tworzę nowoczesne aplikacje webowe z wykorzystaniem React, Next.js i TypeScript. Specjalizuję się w budowaniu responsywnych i dostępnych interfejsów użytkownika.",
+    "downloadCv": "Pobierz CV",
+    "greeting": "Cześć, jestem",
+    "seeProjects": "Zobacz projekty",
+    "badge": "Frontend Developer"
+  },
+  "About": {
+    "subtitle": "Kilka słów o mnie.",
+    "title": "Kim Jestem?",
+    "description": "Jestem pasjonującym się <b>frontend developerem</b> z 3-letnim doświadczeniem, specjalizującym się w <b>React</b> i <b>Next.js</b>. Tworzę nowoczesne, intuicyjne i w pełni responsywne <b>interfejsy webowe</b>, które skupiają się na doświadczeniu użytkownika i estetyce. Przywiązuję dużą wagę do szczegółów i zawsze dążę do czystego, łatwego w utrzymaniu kodu.<br /><br />Poza programowaniem, uwielbiam <b>bieganie</b>, <b>czytanie</b> i odkrywanie nowych <b>gier planszowych</b>.<br /><br />Zapraszam do zapoznania się z moim <b>portfolio</b> i kontaktu, jeśli chcesz współpracować lub po prostu się przywitać!"
+  },
+  "Skills": {
+    "subtitle": "Moje umiejętności",
+    "title": "Umiejętności i Technologie",
+    "categories": {
+      "frontend": "Frontend",
+      "styling": "Styling",
+      "backend": "Backend",
+      "tools": "Narzędzia",
+      "testing": "Testowanie"
+    }
+  },
+  "Navigation": {
+    "home": "Strona główna",
+    "about": "O mnie",
+    "skills": "Umiejętności",
+    "projects": "Projekty",
+    "openMenu": "Otwórz menu",
+    "closeMenu": "Zamknij menu"
+  },
+  "Footer": {
+    "copyright": "© {year} Adam Kowalczuk. Wszelkie prawa zastrzeżone.",
+    "socialLinks": {
+      "github": "Profil na GitHub",
+      "linkedin": "Profil na LinkedIn",
+      "cv": "Pobierz CV"
+    }
+  },
+  "LanguageSwitcher": {
+    "switchToPolish": "Przełącz na język polski",
+    "switchToEnglish": "Przełącz na język angielski"
+  },
+  "Projects": {
+    "subtitle": "Teraz to, co najlepsze.",
+    "title": "Moje Projekty",
+    "viewOnGithub": "Zobacz na GitHub",
+    "liveDemo": "Demo",
+    "projects": {
+      "portfolio": {
+        "description": "Nowoczesne portfolio stworzone z wykorzystaniem Next.js 13, TypeScript i TailwindCSS. Zawiera animacje, ciemny motyw i pełną responsywność."
+      },
+      "ecommerce": {
+        "description": "Aplikacja e-commerce z koszykiem zakupowym, filtrowaniem produktów i systemem autentykacji. Zbudowana w React z wykorzystaniem Redux Toolkit."
+      },
+      "weather": {
+        "description": "Aplikacja pogodowa wykorzystująca OpenWeather API. Pozwala na sprawdzanie aktualnej pogody i prognozy dla wybranych miast."
+      }
+    }
+  },
+  "ThemeSwitcher": {
+    "switchToLight": "Przełącz na jasny motyw",
+    "switchToDark": "Przełącz na ciemny motyw"
+  }
+}
