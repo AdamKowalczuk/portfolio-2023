@@ -188,22 +188,22 @@ export const Skills = () => {
                         aria-label={`${item.name} skill`}
                       >
                         <div
-                          className="bg-primary/15 hover:bg-primary/25 dark:bg-primary/15 dark:hover:bg-primary/25 flex h-20 w-20 items-center justify-center rounded-xl p-4 backdrop-blur-sm transition-all duration-300 ease-in-out group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:group-hover:shadow-[0_8px_30px_rgb(255,255,255,0.12)]"
+                          className="bg-primary/15 hover:bg-primary/25 dark:bg-primary/15 dark:hover:bg-primary/25 flex h-16 w-16 items-center justify-center rounded-xl p-3 backdrop-blur-sm transition-all duration-300 ease-in-out group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] md:h-20 md:w-20 md:p-4 dark:group-hover:shadow-[0_8px_30px_rgb(255,255,255,0.12)]"
                           aria-hidden="true"
                         >
-                          <div className="relative h-12 w-12">
+                          <div className="relative h-10 w-10 md:h-12 md:w-12">
                             <Image
                               src={item.img}
                               alt=""
                               fill
-                              sizes="48px"
+                              sizes="(max-width: 768px) 40px, 48px"
                               className={`object-contain transition-transform duration-300 ease-in-out group-hover:scale-110 ${getIconClass(item.name)}`}
                               aria-hidden="true"
                             />
                           </div>
                         </div>
                         <p
-                          className="text-foreground/80 group-hover:text-foreground mt-1 text-center text-sm font-medium transition-colors duration-300"
+                          className="text-foreground/80 group-hover:text-foreground mt-1 text-center text-xs font-medium transition-colors duration-300 md:text-sm"
                           aria-hidden="true"
                         >
                           {item.name}
