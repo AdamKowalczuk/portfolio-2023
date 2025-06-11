@@ -57,7 +57,7 @@ export const Hero = () => {
                 aria-label={t("downloadCv")}
                 tabIndex={0}
               >
-                <a href="/CV.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/CV_AdamKowalczuk.pdf" target="_blank" rel="noopener noreferrer">
                   {t("downloadCv")}
                 </a>
               </Button>

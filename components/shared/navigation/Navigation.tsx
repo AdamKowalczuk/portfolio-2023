@@ -84,7 +84,13 @@ export const Navigation = () => {
             className="flex items-center transition-transform hover:scale-105"
             aria-label={t("home")}
             tabIndex={0}
-            onClick={(e) => handleNavClick(e, "#hero")}
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }}
           >
             <Image
               src="/assets/images/AK.svg"

@@ -27,7 +27,7 @@ const socialLinks: SocialLink[] = [
     icon: LinkedinIcon,
   },
   {
-    href: "/cv.pdf",
+    href: "/CV_AdamKowalczuk.pdf",
     label: "CV",
     icon: FileText,
     openInNewTab: true,
