@@ -48,6 +48,7 @@
     "subtitle": "Teraz to, co najlepsze.",
     "title": "Moje Projekty",
     "viewOnGithub": "Zobacz na GitHub",
+    "viewOnGooglePlay": "Zobacz w Google Play",
     "liveDemo": "Demo",
     "projects": {
       "portfolio": {
@@ -58,11 +59,57 @@
       },
       "weather": {
         "description": "Aplikacja pogodowa wykorzystująca OpenWeather API. Pozwala na sprawdzanie aktualnej pogody i prognozy dla wybranych miast."
+      },
+      "notes44": {
+        "name": "Notes44",
+        "description": "Notes44 to wieloplatformowa aplikacja do notatek z zaawansowanym edytorem tekstu i obsługą Markdown. Wersja desktopowa (React + Tauri) na Windows oraz mobilna (React Native + Expo) na Androida i iOS. Kluczowe funkcje: system vaults, autozapis, multi-tab, pełna integracja z Google Drive.",
+        "button": {
+          "label": "Zobacz w Google Play",
+          "url": "https://play.google.com/store/apps/details?id=pl.notes44.www&hl=pl",
+          "icon": "googleplay"
+        }
+      },
+      "webfront": {
+        "name": "WebFront",
+        "description": "Interaktywna platforma edukacyjna MERN z autoryzacją JWT i rozbudowanymi kursami HTML, CSS, JavaScript.",
+        "button": {
+          "label": "Zobacz na GitHub",
+          "url": "https://github.com/AdamKowalczuk/praca-inzynierska-client",
+          "icon": "github"
+        }
+      },
+      "planHarmony": {
+        "name": "Plan Harmony",
+        "description": "Nowoczesny menedżer zadań z analityką i śledzeniem aktywności, zbudowany w React z animacjami.",
+        "button": {
+          "label": "Zobacz na GitHub",
+          "url": "https://github.com/AdamKowalczuk/plan-harmony",
+          "icon": "github"
+        }
+      },
+      "netflixClone": {
+        "name": "Netflix clone",
+        "description": "Full-stack klon Netflixa z autoryzacją, streamingiem wideo i responsywnym designem (Next.js + TypeScript).",
+        "button": {
+          "label": "Zobacz na GitHub",
+          "url": "https://github.com/AdamKowalczuk/netflix-clone",
+          "icon": "github"
+        }
       }
     }
   },
   "ThemeSwitcher": {
     "switchToLight": "Przełącz na jasny motyw",
     "switchToDark": "Przełącz na ciemny motyw"
+  },
+  "ProjectSlider": {
+    "clickToEnlarge": "Kliknij aby powiększyć",
+    "closePreview": "Zamknij podgląd",
+    "previousImage": "Poprzednie zdjęcie",
+    "nextImage": "Następne zdjęcie",
+    "goToImage": "Przejdź do zdjęcie {current} z {total}",
+    "imageCounter": "{current} z {total}",
+    "previousImageProject": "Poprzednie zdjęcie {project}",
+    "nextImageProject": "Następne zdjęcie {project}"
   }
 }

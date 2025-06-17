@@ -48,6 +48,7 @@
     "subtitle": "Now, the good stuff.",
     "title": "My Work",
     "viewOnGithub": "View on GitHub",
+    "viewOnGooglePlay": "View on Google Play",
     "liveDemo": "Live Demo",
     "projects": {
       "portfolio": {
@@ -58,11 +59,57 @@
       },
       "weather": {
         "description": "Weather application using OpenWeather API. Allows checking current weather and forecasts for selected cities."
+      },
+      "notes44": {
+        "name": "Notes44",
+        "description": "Notes44 is a cross-platform note-taking app with an advanced Markdown editor. Desktop (React + Tauri) for Windows and mobile (React Native + Expo) for Android and iOS. Key features: vaults, autosave, multi-tab, full Google Drive sync.",
+        "button": {
+          "label": "View on Google Play",
+          "url": "https://play.google.com/store/apps/details?id=pl.notes44.www&hl=pl",
+          "icon": "googleplay"
+        }
+      },
+      "webfront": {
+        "name": "WebFront",
+        "description": "Interactive MERN learning platform with JWT authentication and comprehensive HTML, CSS, JavaScript tutorials.",
+        "button": {
+          "label": "View on GitHub",
+          "url": "https://github.com/AdamKowalczuk/praca-inzynierska-client",
+          "icon": "github"
+        }
+      },
+      "planHarmony": {
+        "name": "Plan Harmony",
+        "description": "Modern task manager with analytics and activity tracking, built in React with smooth animations.",
+        "button": {
+          "label": "View on GitHub",
+          "url": "https://github.com/AdamKowalczuk/plan-harmony",
+          "icon": "github"
+        }
+      },
+      "netflixClone": {
+        "name": "Netflix clone",
+        "description": "Full-stack Netflix clone with authentication, video streaming, and responsive design (Next.js + TypeScript).",
+        "button": {
+          "label": "View on GitHub",
+          "url": "https://github.com/AdamKowalczuk/netflix-clone",
+          "icon": "github"
+        }
       }
     }
   },
   "ThemeSwitcher": {
     "switchToLight": "Switch to light theme",
     "switchToDark": "Switch to dark theme"
+  },
+  "ProjectSlider": {
+    "clickToEnlarge": "Click to enlarge",
+    "closePreview": "Close preview",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "goToImage": "Go to image {current} of {total}",
+    "imageCounter": "{current} of {total}",
+    "previousImageProject": "Previous image of {project}",
+    "nextImageProject": "Next image of {project}"
   }
 }

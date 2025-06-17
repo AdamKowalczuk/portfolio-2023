@@ -2,48 +2,74 @@
 
 import { useRef } from "react";
 import { motion, useInView, easeInOut } from "framer-motion";
-import Image from "next/image";
 import { GithubIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
+import { ProjectSlider } from "./ProjectSlider";
+import { GooglePlayIcon } from "@/components/icons/GooglePlayIcon";
 
 const projectsData = [
   {
-    title: "WebFront",
-    image: "/assets/projects-images/project1.png",
-    alt: "WebFront project screenshot",
-    description:
-      "Interactive learning platform built with MERN stack, featuring JWT authentication and comprehensive HTML, CSS, and JavaScript tutorials.",
-    github: "https://github.com/AdamKowalczuk/praca-inzynierska-client",
-    technologies: ["React", "MongoDB", "Redux", "Node.js", "PWA", "Express.js"],
+    key: "notes44",
+    images: [
+      {
+        src: "/assets/projects-images/notes44-1.png",
+        alt: "Notes44 - główny edytor tekstu z obsługą Markdown",
+      },
+      {
+        src: "/assets/projects-images/notes44-2.png",
+        alt: "Notes44 - system zarządzania plikami i vaults",
+      },
+      {
+        src: "/assets/projects-images/notes44-3.png",
+        alt: "Notes44 - synchronizacja z Google Drive",
+      },
+      {
+        src: "/assets/projects-images/notes44-4.png",
+        alt: "Notes44 - synchronizacja z Google Drive",
+      },
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tauri",
+      "React Native",
+      "Expo",
+      "Zustand",
+      "Markdown",
+      "Google Drive API",
+    ],
   },
   {
-    title: "Plan Harmony",
-    image: "/assets/projects-images/project2.png",
-    alt: "Plan Harmony project screenshot",
-    description:
-      "Modern task management application with activity tracking and analytics, built with React and enhanced by smooth animations.",
-    github: "https://github.com/AdamKowalczuk/plan-harmony",
+    key: "planHarmony",
+    images: [
+      {
+        src: "/assets/projects-images/project2.png",
+        alt: "Plan Harmony - główny dashboard aplikacji",
+      },
+    ],
     technologies: ["React", "Framer motion", "Redux"],
     reverse: true,
   },
   {
-    title: "Netflix clone",
-    image: "/assets/projects-images/project3.png",
-    alt: "Netflix clone project screenshot",
-    description:
-      "Full-stack Netflix clone featuring authentication, video streaming, and responsive design, built with Next.js and TypeScript.",
-    github: "https://github.com/AdamKowalczuk/netflix-clone",
+    key: "netflixClone",
+    images: [
+      {
+        src: "/assets/projects-images/project3.png",
+        alt: "Netflix clone - strona główna z filmami",
+      },
+    ],
     technologies: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Prisma", "MongoDB"],
   },
   {
-    title: "Nerd Shop",
-    image: "/assets/projects-images/project4.png",
-    alt: "Nerd Shop project screenshot",
-    description:
-      "E-commerce platform with PayPal integration, featuring product catalog, cart management, and secure checkout process.",
-    github: "https://github.com/AdamKowalczuk/e-commerce-react",
-    technologies: ["React", "PayPal sandbox", "React router"],
+    key: "webfront",
+    images: [
+      {
+        src: "/assets/projects-images/project1.png",
+        alt: "WebFront - główny widok platformy edukacyjnej",
+      },
+    ],
+    technologies: ["React", "MongoDB", "Redux", "Node.js", "PWA", "Express.js"],
     reverse: true,
   },
 ];
@@ -70,6 +96,7 @@ export const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const t = useTranslations("Projects");
+  const tProjects = useTranslations("Projects.projects");
 
   return (
     <section
@@ -104,9 +131,10 @@ export const Projects = () => {
           <div className="flex flex-col gap-16 md:gap-20">
             {projectsData.map((project, idx) => {
               const isReverse = project.reverse;
+              const key = project.key;
               return (
                 <motion.div
-                  key={project.title}
+                  key={key}
                   className={`flex flex-col-reverse md:flex-row ${isReverse ? "md:flex-row-reverse" : ""} w-full items-center gap-8 md:gap-16`}
                   initial="hidden"
                   whileInView="visible"
@@ -114,20 +142,13 @@ export const Projects = () => {
                   variants={projectVariants}
                   transition={{ duration: 0.7, delay: idx * 0.1 }}
                 >
-                  {/* Obraz projektu */}
+                  {/* Slider projektu */}
                   <div className="flex w-full justify-center md:w-1/2">
-                    <div className="relative overflow-hidden rounded-xl">
-                      <Image
-                        src={project.image}
-                        alt={project.alt}
-                        width={550}
-                        height={550}
-                        className="rounded-xl object-cover"
-                        aria-label={project.alt}
-                        tabIndex={0}
+                    <div className="relative h-[400px] w-full max-w-[550px] md:h-[500px]">
+                      <ProjectSlider
+                        images={project.images}
+                        projectTitle={tProjects(`${key}.name`)}
                         priority={idx === 0}
-                        loading={idx === 0 ? "eager" : "lazy"}
-                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                     </div>
                   </div>
@@ -137,18 +158,18 @@ export const Projects = () => {
                       className="text-foreground mb-4 text-2xl font-semibold md:text-3xl"
                       id={`project-${idx}-title`}
                     >
-                      {project.title}
+                      {tProjects(`${key}.name`)}
                     </h3>
                     <p
                       className="text-muted-foreground mb-6 text-base leading-relaxed md:text-lg"
                       aria-labelledby={`project-${idx}-title`}
                     >
-                      {project.description}
+                      {tProjects(`${key}.description`)}
                     </p>
                     <div
                       className="mb-8 flex flex-wrap gap-2"
                       role="list"
-                      aria-label={`Technologies used in ${project.title}`}
+                      aria-label={`Technologies used in ${tProjects(`${key}.name`)}`}
                     >
                       {project.technologies.map((tech) => (
                         <span
@@ -160,18 +181,22 @@ export const Projects = () => {
                         </span>
                       ))}
                     </div>
+                    {/* Przycisk uniwersalny */}
                     <a
-                      href={project.github}
+                      href={tProjects(`${key}.button.url`)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`View ${project.title} on GitHub`}
+                      aria-label={tProjects(`${key}.button.label`)}
                       tabIndex={0}
                       className="w-full"
                     >
                       <Button size="large" className="w-full gap-2" asChild>
                         <div className="flex items-center justify-center">
-                          <GithubIcon className="h-5 w-5" aria-hidden="true" />
-                          <span>{t("viewOnGithub")}</span>
+                          {tProjects(`${key}.button.icon`) === "github" && (
+                            <GithubIcon className="h-5 w-5" aria-hidden="true" />
+                          )}
+                          {tProjects(`${key}.button.icon`) === "googleplay" && <GooglePlayIcon />}
+                          <span>{tProjects(`${key}.button.label`)}</span>
                         </div>
                       </Button>
                     </a>
