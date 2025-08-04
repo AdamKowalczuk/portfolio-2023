@@ -78,15 +78,6 @@
           "icon": "github"
         }
       },
-      "planHarmony": {
-        "name": "Plan Harmony",
-        "description": "Modern task manager with analytics and activity tracking, built in React with smooth animations.",
-        "button": {
-          "label": "View on GitHub",
-          "url": "https://github.com/AdamKowalczuk/plan-harmony",
-          "icon": "github"
-        }
-      },
       "netflixClone": {
         "name": "Netflix clone",
         "description": "Full-stack Netflix clone with authentication, video streaming, and responsive design (Next.js + TypeScript).",

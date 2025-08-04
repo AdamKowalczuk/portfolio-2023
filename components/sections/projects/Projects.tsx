@@ -40,17 +40,17 @@ const projectsData = [
       "Google Drive API",
     ],
   },
-  {
-    key: "planHarmony",
-    images: [
-      {
-        src: "/assets/projects-images/project2.png",
-        alt: "Plan Harmony - główny dashboard aplikacji",
-      },
-    ],
-    technologies: ["React", "Framer motion", "Redux"],
-    reverse: true,
-  },
+  // {
+  //   key: "planHarmony",
+  //   images: [
+  //     {
+  //       src: "/assets/projects-images/project2.png",
+  //       alt: "Plan Harmony - główny dashboard aplikacji",
+  //     },
+  //   ],
+  //   technologies: ["React", "Framer motion", "Redux"],
+  //   reverse: true,
+  // },
   {
     key: "netflixClone",
     images: [

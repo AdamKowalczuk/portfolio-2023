@@ -78,15 +78,6 @@
           "icon": "github"
         }
       },
-      "planHarmony": {
-        "name": "Plan Harmony",
-        "description": "Nowoczesny menedżer zadań z analityką i śledzeniem aktywności, zbudowany w React z animacjami.",
-        "button": {
-          "label": "Zobacz na GitHub",
-          "url": "https://github.com/AdamKowalczuk/plan-harmony",
-          "icon": "github"
-        }
-      },
       "netflixClone": {
         "name": "Netflix clone",
         "description": "Full-stack klon Netflixa z autoryzacją, streamingiem wideo i responsywnym designem (Next.js + TypeScript).",
