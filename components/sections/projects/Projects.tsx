@@ -60,6 +60,7 @@ const projectsData = [
       },
     ],
     technologies: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Prisma", "MongoDB"],
+    reverse: true,
   },
   {
     key: "webfront",
@@ -70,7 +71,6 @@ const projectsData = [
       },
     ],
     technologies: ["React", "MongoDB", "Redux", "Node.js", "PWA", "Express.js"],
-    reverse: true,
   },
 ];
 
@@ -153,7 +153,7 @@ export const Projects = () => {
                     </div>
                   </div>
                   {/* Opis projektu */}
-                  <div className="bg-card/50 border-border/50 flex w-full flex-col items-start rounded-xl border p-6 shadow-lg md:w-1/2 md:p-8">
+                  <div className="bg-card/50 border-border/50 flex w-full flex-col items-start rounded-xl border p-6 shadow-lg md:w-1/2 md:max-w-[500px] md:p-8">
                     <h3
                       className="text-foreground mb-4 text-2xl font-semibold md:text-3xl"
                       id={`project-${idx}-title`}
