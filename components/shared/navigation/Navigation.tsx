@@ -6,10 +6,10 @@ import { useTranslations } from "next-intl";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LanguageSwitcher } from "@/components/shared/language-switcher/LanguageSwitcher";
-import { ThemeSwitcher } from "@/components/shared/theme-switcher/ThemeSwitcher";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { AnimatedThemeToggler } from "@/components/magicui/animated-theme-toggler";
 
 const navigationLinks = [
   { href: "#hero", label: "home" },
@@ -131,7 +131,7 @@ export const Navigation = () => {
               </Link>
             ))}
             <div className="flex items-center gap-2">
-              <ThemeSwitcher />
+              <AnimatedThemeToggler />
               <LanguageSwitcher />
             </div>
           </div>
@@ -188,7 +188,7 @@ export const Navigation = () => {
                   </Link>
                 ))}
                 <div className="flex items-center gap-2 px-3 py-2">
-                  <ThemeSwitcher />
+                  <AnimatedThemeToggler />
                   <LanguageSwitcher />
                 </div>
               </motion.div>
