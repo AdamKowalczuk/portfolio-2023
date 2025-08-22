@@ -1,15 +1,9 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useInView, easeInOut } from "framer-motion";
-import { useTranslations } from "next-intl";
-
-const formatDescription = (text: string) => `
-<div class="space-y-8">
-  <p class="text-lg text-[#e0d7ff] leading-relaxed">
-    ${text}
-  </p>
-</div>`;
+import { useTranslations, useLocale } from "next-intl";
+import { Highlighter } from "@/components/magicui/highlighter";
 
 const sectionVariants = {
   hidden: { opacity: 0, x: -200 },
@@ -28,13 +22,31 @@ export const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const t = useTranslations("About");
+  const locale = useLocale();
 
-  const description = t
-    .raw("description")
-    .replace(
-      /<b>(.*?)<\/b>/g,
-      '<b class="text-primary font-semibold bg-white px-1 py rounded-sm inline-block mx-0.5 shadow-sm">$1</b>'
-    );
+  useEffect(() => {
+    const cleanupHighlighter = () => {
+      const elements = document.querySelectorAll("[data-rough-notation]");
+      elements.forEach((element) => {
+        const annotations = (
+          element as HTMLElement & { _roughNotation?: Array<{ remove: () => void }> }
+        )._roughNotation;
+        if (annotations) {
+          annotations.forEach((annotation) => {
+            if (annotation && typeof annotation.remove === "function") {
+              annotation.remove();
+            }
+          });
+        }
+      });
+    };
+
+    cleanupHighlighter();
+
+    return () => {
+      cleanupHighlighter();
+    };
+  }, [locale]);
 
   return (
     <section id="about" className="py-16 md:py-24" aria-labelledby="about-title">
@@ -63,15 +75,34 @@ export const About = () => {
           variants={sectionVariants}
           className="relative w-full"
         >
-          <div className="from-primary/90 via-primary/80 to-primary/60 absolute inset-0 rounded-2xl bg-gradient-to-br md:rounded-[2rem]">
+          <div className="bg-primary/0 absolute inset-0 rounded-2xl md:rounded-[2rem]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent" />
           </div>
           <div className="relative px-4 py-8 md:px-8 md:py-12">
-            <div
-              className="prose prose-invert max-w-none"
-              dangerouslySetInnerHTML={{ __html: formatDescription(description) }}
-              aria-labelledby="about-subtitle"
-            />
+            <div className="prose prose-invert max-w-none text-center">
+              <p className="text-foreground space-x-2 text-left text-lg leading-relaxed tracking-wide">
+                {(
+                  t.raw("description") as Array<{ text: string; type: string; color?: string }>
+                ).map((part, index) => {
+                  if (part.type === "highlight") {
+                    return (
+                      <Highlighter
+                        key={`${locale}-${index}`}
+                        action="highlight"
+                        color="oklch(.541 .281 293.009)"
+                        padding={6}
+                      >
+                        <span className="text-white">{part.text}</span>
+                      </Highlighter>
+                    );
+                  }
+                  if (part.type === "break") {
+                    return <span key={`${locale}-${index}`} className="block h-4" />;
+                  }
+                  return part.text;
+                })}
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
 
 const sectionVariants = {
@@ -32,9 +33,12 @@ export const Hero = () => {
           className="flex w-full flex-col items-center justify-center gap-8 md:flex-row md:gap-10 lg:mx-auto lg:max-w-6xl"
         >
           <div className="flex w-full flex-col items-center md:w-1/2 md:items-center lg:items-start">
-            <span className="mb-4 inline-block rounded-2xl bg-[#2d1856] px-5 py-2 text-base font-semibold text-[#e0d7ff] md:text-lg">
+            <Badge
+              variant="outline"
+              className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 mb-4 rounded-2xl px-5 py-2 text-base font-semibold transition-colors md:text-lg"
+            >
               {t("badge")}
-            </span>
+            </Badge>
             <h1 className="text-foreground mb-2 text-center text-4xl font-bold md:text-left md:text-5xl lg:text-6xl">
               {t("greeting")} <span className="text-primary">{t("title")}</span>
             </h1>
@@ -50,13 +54,7 @@ export const Hero = () => {
               >
                 {t("seeProjects")}
               </Button>
-              <Button
-                size="lg"
-                variant="secondary"
-                asChild
-                aria-label={t("downloadCv")}
-                tabIndex={0}
-              >
+              <Button size="lg" variant="outline" asChild aria-label={t("downloadCv")} tabIndex={0}>
                 <a href="/CV_AdamKowalczuk.pdf" target="_blank" rel="noopener noreferrer">
                   {t("downloadCv")}
                 </a>

@@ -11,7 +11,46 @@
   "About": {
     "subtitle": "Kilka słów o mnie.",
     "title": "Kim Jestem?",
-    "description": "Jestem pasjonującym się <b>frontend developerem</b> z 3-letnim doświadczeniem, specjalizującym się w <b>React</b> i <b>Next.js</b>. Tworzę nowoczesne, intuicyjne i w pełni responsywne <b>interfejsy webowe</b>, które skupiają się na doświadczeniu użytkownika i estetyce. Przywiązuję dużą wagę do szczegółów i zawsze dążę do czystego, łatwego w utrzymaniu kodu.<br /><br />Poza programowaniem, uwielbiam <b>bieganie</b>, <b>czytanie</b> i odkrywanie nowych <b>gier planszowych</b>.<br /><br />Zapraszam do zapoznania się z moim <b>portfolio</b> i kontaktu, jeśli chcesz współpracować lub po prostu się przywitać!"
+    "description": [
+      { "text": "Jestem pasjonującym się ", "type": "normal" },
+      { "text": " frontend", "type": "highlight" },
+      {
+        "text": " developerem z 3-letnim doświadczeniem, specjalizującym się w ",
+        "type": "normal"
+      },
+      { "text": " React", "type": "highlight" },
+      { "text": " i ", "type": "normal" },
+      { "text": "Next.js", "type": "normal" },
+      { "text": ". Tworzę nowoczesne, intuicyjne i w pełni responsywne ", "type": "normal" },
+      { "text": "interfejsy webowe", "type": "normal" },
+      {
+        "text": ", które skupiają się na doświadczeniu użytkownika i estetyce. Przywiązuję dużą wagę do szczegółów i zawsze dążę do ",
+        "type": "normal"
+      },
+      {
+        "text": "  czystego, ",
+        "type": "highlight"
+      },
+      {
+        "text": "łatwego w utrzymaniu kodu.",
+        "type": "normal"
+      },
+      { "type": "break" },
+      { "text": "Poza programowaniem, uwielbiam ", "type": "normal" },
+      { "text": " bieganie", "type": "highlight" },
+      { "text": ", ", "type": "normal" },
+      { "text": "czytanie", "type": "normal" },
+      { "text": " i odkrywanie nowych ", "type": "normal" },
+      { "text": " gier planszowych.", "type": "highlight" },
+
+      { "type": "break" },
+      { "text": "Zapraszam do zapoznania się z moim ", "type": "normal" },
+      { "text": " portfolio", "type": "highlight" },
+      {
+        "text": " i kontaktu, jeśli chcesz współpracować lub po prostu się przywitać!",
+        "type": "normal"
+      }
+    ]
   },
   "Skills": {
     "subtitle": "Moje umiejętności",

@@ -11,7 +11,40 @@
   "About": {
     "subtitle": "A few words about me.",
     "title": "Who Am I?",
-    "description": "I am a passionate <b>frontend developer</b> with 3 years of experience, specializing in <b>React</b> and <b>Next.js</b>. I create modern, intuitive and fully responsive <b>web interfaces</b> that focus on user experience and aesthetics. I pay great attention to detail and always strive for clean, maintainable code.<br /><br />Outside of programming, I enjoy <b>running</b>, <b>reading</b> and discovering new <b>board games.</b><br /><br />Feel free to check out my <b>portfolio</b> and contact me if you want to collaborate or just say hi!"
+    "description": [
+      { "text": "I am a passionate ", "type": "normal" },
+      { "text": " frontend developer", "type": "highlight" },
+      { "text": " with 3 years of experience, specializing in ", "type": "normal" },
+      { "text": " React", "type": "highlight" },
+      { "text": " and ", "type": "normal" },
+      { "text": "Next.js", "type": "normal" },
+      { "text": ". I create modern, intuitive and fully responsive ", "type": "normal" },
+      { "text": "web interfaces", "type": "normal" },
+      {
+        "text": " that focus on user experience and aesthetics. I pay great attention to detail and always strive for ",
+        "type": "normal"
+      },
+      {
+        "text": " clean, ",
+        "type": "highlight"
+      },
+      {
+        "text": "maintainable code.",
+        "type": "normal"
+      },
+      { "type": "break" },
+      { "text": "Outside of programming, I enjoy ", "type": "normal" },
+      { "text": " running", "type": "highlight" },
+      { "text": ", ", "type": "normal" },
+      { "text": "reading", "type": "normal" },
+      { "text": " and discovering new ", "type": "normal" },
+      { "text": " board games", "type": "highlight" },
+
+      { "type": "break" },
+      { "text": "Feel free to check out my ", "type": "normal" },
+      { "text": " portfolio", "type": "highlight" },
+      { "text": " and contact me if you want to collaborate or just say hi!", "type": "normal" }
+    ]
   },
   "Skills": {
     "subtitle": "My expertise",
