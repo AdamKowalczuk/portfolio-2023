@@ -108,21 +108,12 @@
           "icon": "googleplay"
         }
       },
-      "webfront": {
-        "name": "WebFront",
-        "description": "Interaktywna platforma edukacyjna MERN z autoryzacją JWT i rozbudowanymi kursami HTML, CSS, JavaScript.",
+      "lingrow": {
+        "name": "Lingrow",
+        "description": "Nowoczesna platforma do nauki języków obcych z interaktywnymi lekcjami, systemem płatności Stripe, autoryzacją Clerk i wielojęzycznym wsparciem. Zawiera elementy gamifikacji, questy, system punktów i panel administracyjny React Admin.",
         "button": {
           "label": "Zobacz na GitHub",
-          "url": "https://github.com/AdamKowalczuk/praca-inzynierska-client",
-          "icon": "github"
-        }
-      },
-      "netflixClone": {
-        "name": "Netflix clone",
-        "description": "Full-stack klon Netflixa z autoryzacją, streamingiem wideo i responsywnym designem (Next.js + TypeScript).",
-        "button": {
-          "label": "Zobacz na GitHub",
-          "url": "https://github.com/AdamKowalczuk/netflix-clone",
+          "url": "https://github.com/AdamKowalczuk/lingrow",
           "icon": "github"
         }
       }

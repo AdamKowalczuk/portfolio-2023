@@ -158,7 +158,7 @@ export const ProjectSlider = ({ images, projectTitle, priority = false }: Projec
               alt={images[page].alt}
               width={550}
               height={500}
-              className="h-full w-full cursor-pointer rounded-xl object-contain transition-transform duration-200 hover:scale-105"
+              className="border-border/40 hover:border-border/60 hover:ring-primary/30 hover:shadow-primary/10 h-full w-full cursor-pointer rounded-xl border object-contain shadow-lg shadow-black/10 transition-all duration-200 hover:scale-105 hover:shadow-2xl hover:shadow-xl hover:ring-2 hover:shadow-black/20"
               priority={priority && page === 0}
               loading={priority && page === 0 ? "eager" : "lazy"}
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -260,7 +260,7 @@ export const ProjectSlider = ({ images, projectTitle, priority = false }: Projec
                 alt={images[page].alt}
                 width={1200}
                 height={800}
-                className="max-h-[90vh] max-w-[90vw] rounded-lg object-contain"
+                className="border-border/40 ring-primary/20 shadow-primary/10 max-h-[90vh] max-w-[90vw] rounded-lg border object-contain p-4 shadow-2xl ring-2 shadow-black/20"
                 priority
               />
 
