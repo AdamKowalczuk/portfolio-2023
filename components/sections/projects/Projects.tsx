@@ -10,49 +10,6 @@ import { GooglePlayIcon } from "@/components/icons/GooglePlayIcon";
 
 const projectsData = [
   {
-    key: "notes44",
-    images: [
-      {
-        src: "/assets/projects-images/notes44/notes44-1.png",
-        alt: "Notes44 - główny edytor tekstu z obsługą Markdown",
-      },
-      {
-        src: "/assets/projects-images/notes44/notes44-2.png",
-        alt: "Notes44 - system zarządzania plikami i vaults",
-      },
-      {
-        src: "/assets/projects-images/notes44/notes44-3.png",
-        alt: "Notes44 - synchronizacja z Google Drive",
-      },
-      {
-        src: "/assets/projects-images/notes44/notes44-4.png",
-        alt: "Notes44 - synchronizacja z Google Drive",
-      },
-    ],
-    technologies: [
-      "React",
-      "TypeScript",
-      "Tauri",
-      "React Native",
-      "Expo",
-      "Zustand",
-      "Markdown",
-      "Google Drive API",
-    ],
-  },
-  // {
-  //   key: "planHarmony",
-  //   images: [
-  //     {
-  //       src: "/assets/projects-images/project2.png",
-  //       alt: "Plan Harmony - główny dashboard aplikacji",
-  //     },
-  //   ],
-  //   technologies: ["React", "Framer motion", "Redux"],
-  //   reverse: true,
-  // },
-
-  {
     key: "lingrow",
     images: [
       {
@@ -96,6 +53,37 @@ const projectsData = [
       "Zustand",
       "React Admin",
       "next-intl",
+    ],
+  },
+  {
+    key: "notes44",
+    images: [
+      {
+        src: "/assets/projects-images/notes44/notes44-3.png",
+        alt: "Notes44 - główny edytor tekstu z obsługą Markdown",
+      },
+      {
+        src: "/assets/projects-images/notes44/notes44-4.png",
+        alt: "Notes44 - system zarządzania plikami i vaults",
+      },
+      {
+        src: "/assets/projects-images/notes44/notes44-1.png",
+        alt: "Notes44 - synchronizacja z Google Drive",
+      },
+      {
+        src: "/assets/projects-images/notes44/notes44-2.png",
+        alt: "Notes44 - synchronizacja z Google Drive",
+      },
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tauri",
+      "React Native",
+      "Expo",
+      "Zustand",
+      "Markdown",
+      "Google Drive API",
     ],
   },
 ];
